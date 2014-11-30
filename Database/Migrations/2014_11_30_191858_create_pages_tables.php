@@ -30,6 +30,10 @@ class CreatePagesTables extends Migration
             $table->text('body');
             $table->string('meta_title');
             $table->string('meta_description');
+            $table->string('og_title');
+            $table->string('og_description');
+            $table->string('og_image');
+            $table->string('og_type');
 
             $table->unique(['page_id', 'locale']);
             $table->foreign('page_id')->references('id')->on('pages')->onDelete('cascade');
