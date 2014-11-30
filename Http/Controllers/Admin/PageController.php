@@ -8,7 +8,7 @@ class PageController extends AdminBaseController
 
     public function index()
     {
-        return View::make('page::index');
+        return View::make('page::admin.index');
     }
 
 }
