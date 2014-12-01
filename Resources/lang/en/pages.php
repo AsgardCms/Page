@@ -6,5 +6,9 @@ return [
     ],
     'button' => [
         'create page' => 'Create a page'
+    ],
+    'table' => [
+        'name' => 'Name',
+        'slug' => 'Slug',
     ]
 ];

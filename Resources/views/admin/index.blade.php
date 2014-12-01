@@ -29,8 +29,8 @@
                         <thead>
                         <tr>
                             <th>{{ trans('core::core.table.created at') }}</th>
-                            <th>{{ trans('page::page.table.name') }}</th>
-                            <th>{{ trans('page::page.table.slug') }}</th>
+                            <th>{{ trans('page::pages.table.name') }}</th>
+                            <th>{{ trans('page::pages.table.slug') }}</th>
                             <th>{{ trans('core::core.table.actions') }}</th>
                         </tr>
                         </thead>
@@ -66,8 +66,8 @@
                         <tfoot>
                         <tr>
                             <th>{{ trans('core::core.table.created at') }}</th>
-                            <th>{{ trans('page::page.table.name') }}</th>
-                            <th>{{ trans('page::page.table.slug') }}</th>
+                            <th>{{ trans('page::pages.table.name') }}</th>
+                            <th>{{ trans('page::pages.table.slug') }}</th>
                             <th>{{ trans('core::core.table.actions') }}</th>
                         </tr>
                         </tfoot>
