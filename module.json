@@ -6,7 +6,8 @@
   "active": 1,
   "priority": 0,
   "providers": [
-    "Modules\\Page\\Providers\\RouteServiceProvider"
+    "Modules\\Page\\Providers\\RouteServiceProvider",
+    "Modules\\Page\\Providers\\PageServiceProvider"
   ],
   "files": [
     "start.php",
