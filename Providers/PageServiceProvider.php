@@ -1,6 +1,8 @@
 <?php namespace Modules\Page\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Modules\Page\Entities\Page;
+use Modules\Page\Repositories\Eloquent\EloquentPageRepository;
 
 class PageServiceProvider extends ServiceProvider
 {
@@ -19,7 +21,7 @@ class PageServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->registerBindings();
     }
 
     /**
@@ -30,6 +32,16 @@ class PageServiceProvider extends ServiceProvider
     public function provides()
     {
         return array();
+    }
+
+    private function registerBindings()
+    {
+        $this->app->bind(
+            'Modules\Page\Repositories\PageRepository',
+            function() {
+                return new EloquentPageRepository(new Page);
+            }
+        );
     }
 
 }
