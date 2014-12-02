@@ -9,7 +9,7 @@ class SidebarViewComposer extends BaseSidebarViewComposer
     {
         $view->items->put('pages', [
             'weight' => 5,
-            'request' => "*/$view->prefix/pages",
+            'request' => "*/$view->prefix/pages*",
             'route' => 'dashboard.page.index',
             'icon-class' => 'fa fa-file',
             'title' => 'Pages',
