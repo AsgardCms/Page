@@ -45,6 +45,9 @@
     <script type="text/javascript">
         $(function() {
             CKEDITOR.replaceAll(function( textarea, config ) {
+                if (!$(textarea).hasClass('ckeditor')) {
+                    return false;
+                }
                 config.language = '<?php echo App::getLocale() ?>';
             } );
         });
