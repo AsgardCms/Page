@@ -66,6 +66,16 @@
                         <textarea class="form-control" name="{{$lang}}[og_description]" rows="10" cols="80"></textarea>
                         {!! $errors->first("{$lang}[og_description]", '<span class="help-block">:message</span>') !!}
                     </div>
+                    <div class="form-group{{ $errors->has("{$lang}[og_type]") ? ' has-error' : '' }}">
+                        <label>{{ trans('page::pages.form.og_type') }}</label>
+                        <select class="form-control">
+                            <option>option 1</option>
+                            <option>option 2</option>
+                            <option>option 3</option>
+                            <option>option 4</option>
+                            <option>option 5</option>
+                        </select>
+                    </div>
                 </div>
             </div>
         </div>

@@ -18,5 +18,6 @@ return [
         'meta_description' => 'Description Méta',
         'og_title' => 'Titre Facebook',
         'og_description' => 'Description Facebook',
+        'og_type' => 'Type de page',
     ]
 ];
