@@ -40,8 +40,7 @@
                     </div>
                     <div class='form-group{{ $errors->has("{$lang}[meta_description]") ? ' has-error' : '' }}'>
                         {!! Form::label("{$lang}[meta_description]", trans('page::pages.form.meta_description')) !!}
-                        <textarea name="{{$lang}}[meta_description]" rows="10" cols="80">
-                    </textarea>
+                        <textarea class="form-control" name="{{$lang}}[meta_description]" rows="10" cols="80"></textarea>
                         {!! $errors->first("{$lang}[meta_description]", '<span class="help-block">:message</span>') !!}
                     </div>
                 </div>
