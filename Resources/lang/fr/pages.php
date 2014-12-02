@@ -2,7 +2,8 @@
 
 return [
     'title' => [
-        'pages' => 'Pages'
+        'pages' => 'Pages',
+        'create page' => 'Créer une page',
     ],
     'button' => [
         'create page' => 'Créer une page'
@@ -10,5 +11,8 @@ return [
     'table' => [
         'name' => 'Nom',
         'slug' => 'Slug',
+    ],
+    'form' => [
+        'title' => 'Titre'
     ]
 ];
