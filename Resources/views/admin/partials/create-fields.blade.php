@@ -69,11 +69,9 @@
                     <div class="form-group{{ $errors->has("{$lang}[og_type]") ? ' has-error' : '' }}">
                         <label>{{ trans('page::pages.form.og_type') }}</label>
                         <select class="form-control">
-                            <option>option 1</option>
-                            <option>option 2</option>
-                            <option>option 3</option>
-                            <option>option 4</option>
-                            <option>option 5</option>
+                            <option value="website">{{ trans('page::pages.facebook-types.website') }}</option>
+                            <option value="product">{{ trans('page::pages.facebook-types.product') }}</option>
+                            <option value="article">{{ trans('page::pages.facebook-types.article') }}</option>
                         </select>
                     </div>
                 </div>

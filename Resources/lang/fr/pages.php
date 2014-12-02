@@ -19,5 +19,10 @@ return [
         'og_title' => 'Titre Facebook',
         'og_description' => 'Description Facebook',
         'og_type' => 'Type de page',
+    ],
+    'facebook-types' => [
+        'website' => 'Site internet',
+        'product' => 'Produit',
+        'article' => 'Article',
     ]
 ];
