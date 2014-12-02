@@ -13,6 +13,10 @@ return [
         'slug' => 'Slug',
     ],
     'form' => [
-        'title' => 'Titre'
+        'title' => 'Titre',
+        'meta_title' => 'Titre méta',
+        'meta_description' => 'Description Méta',
+        'og_title' => 'Titre Facebook',
+        'og_description' => 'Description Facebook',
     ]
 ];
