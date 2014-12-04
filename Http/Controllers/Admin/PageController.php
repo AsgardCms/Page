@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\View;
 use Modules\Core\Http\Controllers\Admin\AdminBaseController;
+use Modules\Page\Http\Requests\CreatePageRequest;
 use Modules\Page\Repositories\PageRepository;
 
 class PageController extends AdminBaseController
@@ -38,11 +39,12 @@ class PageController extends AdminBaseController
     /**
      * Store a newly created resource in storage.
      *
+     * @param CreatePageRequest $request
+     *
      * @return Response
      */
-    public function store()
+    public function store(CreatePageRequest $request)
     {
-        //
     }
 
     /**
