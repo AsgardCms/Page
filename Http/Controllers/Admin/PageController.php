@@ -7,7 +7,6 @@ use Modules\Page\Repositories\PageRepository;
 
 class PageController extends AdminBaseController
 {
-
     /**
      * @var PageRepository
      */
@@ -16,6 +15,7 @@ class PageController extends AdminBaseController
     public function __construct(PageRepository $page)
     {
         parent::__construct();
+
         $this->page = $page;
     }
 
