@@ -2,12 +2,12 @@
 
 @section('content-header')
     <h1>
-        {{ trans('page::pages.title.create page') }}
+        {{ trans('page::pages.title.edit page') }}
     </h1>
     <ol class="breadcrumb">
         <li><a href="{{ URL::route('dashboard.index') }}"><i class="fa fa-dashboard"></i> {{ trans('core::core.breadcrumb.home') }}</a></li>
         <li><a href="{{ URL::route('dashboard.category.index') }}">{{ trans('page::pages.title.pages') }}</a></li>
-        <li class="active">{{ trans('page::pages.title.create page') }}</li>
+        <li class="active">{{ trans('page::pages.title.edit page') }}</li>
     </ol>
 @stop
 
@@ -47,7 +47,7 @@
                                    name="is_home"
                                    type="checkbox"
                                    class="flat-blue"
-                                    {{ isset($page->is_home) && (bool)$page->is_home->plainValue == true ? 'checked' : '' }}
+                                    {{ isset($page->is_home) && (bool)$page->is_home == true ? 'checked' : '' }}
                                    value="1" />
                             {{ trans('page::pages.form.is homepage') }}
                         </label>
