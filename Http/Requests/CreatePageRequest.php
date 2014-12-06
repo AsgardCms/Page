@@ -6,7 +6,9 @@ class CreatePageRequest extends FormRequest
 {
     public function rules()
     {
-        return [];
+        return [
+            'template' => 'required'
+        ];
     }
 
     public function authorize()
