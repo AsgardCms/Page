@@ -17,7 +17,7 @@
 @stop
 
 @section('content')
-    {!! Form::open(['route' => ['dashboard.category.store'], 'method' => 'post']) !!}
+    {!! Form::open(['route' => ['dashboard.page.store'], 'method' => 'post']) !!}
     <div class="row">
         <div class="col-md-10">
             <div class="nav-tabs-custom">

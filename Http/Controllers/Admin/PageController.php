@@ -1,6 +1,8 @@
 <?php namespace Modules\Page\Http\Controllers\Admin;
 
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
+use Laracasts\Flash\Flash;
 use Modules\Core\Http\Controllers\Admin\AdminBaseController;
 use Modules\Page\Http\Requests\CreatePageRequest;
 use Modules\Page\Repositories\PageRepository;
@@ -48,7 +50,7 @@ class PageController extends AdminBaseController
         $this->page->create($request->all());
 
         Flash::success(trans('page::messages.page created'));
-        return Redirect::route('dashboard.category.index');
+        return Redirect::route('dashboard.page.index');
     }
 
     /**
