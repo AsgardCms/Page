@@ -18,7 +18,7 @@
 @section('content')
     {!! Form::open(['route' => ['dashboard.category.store'], 'method' => 'post']) !!}
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-10">
             <div class="nav-tabs-custom">
                 @include('core::partials.form-tab-headers')
                 <div class="tab-content">
@@ -36,6 +36,17 @@
                     </div>
                 </div>
             </div> {{-- end nav-tabs-custom --}}
+        </div>
+        <div class="col-md-2">
+            <div class="box box-info">
+                <div class="box-body">
+                    <div class='form-group{{ $errors->has("template") ? ' has-error' : '' }}'>
+                        {!! Form::label("template", trans('page::pages.form.template')) !!}
+                        {!! Form::text("template", Input::old("template"), ['class' => "form-control", 'placeholder' => trans('page::pages.form.template')]) !!}
+                        {!! $errors->first("template", '<span class="help-block">:message</span>') !!}
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

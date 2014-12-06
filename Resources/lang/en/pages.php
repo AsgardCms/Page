@@ -19,6 +19,7 @@ return [
         'og_title' => 'Facebook title',
         'og_description' => 'Facebook description',
         'og_type' => 'Facebook type',
+        'template' => 'Page template name',
     ],
     'facebook-types' => [
         'website' => 'Website',
