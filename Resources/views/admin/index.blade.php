@@ -45,7 +45,7 @@
                             </td>
                             <td>
                                 <a href="{{ URL::route('dashboard.page.edit', [$page->id]) }}">
-                                    {{ $page->name }}
+                                    {{ $page->title }}
                                 </a>
                             </td>
                             <td>
