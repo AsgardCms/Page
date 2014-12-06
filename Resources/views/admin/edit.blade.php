@@ -17,7 +17,7 @@
 @stop
 
 @section('content')
-    {!! Form::open(['route' => ['dashboard.page.update', $page->id], 'method' => 'post']) !!}
+    {!! Form::open(['route' => ['dashboard.page.update', $page->id], 'method' => 'put']) !!}
     <div class="row">
         <div class="col-md-10">
             <div class="nav-tabs-custom">
