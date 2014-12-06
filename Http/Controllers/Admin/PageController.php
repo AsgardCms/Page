@@ -83,12 +83,15 @@ class PageController extends AdminBaseController
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
+     * @param  $page
      * @return Response
      */
-    public function destroy($id)
+    public function destroy($page)
     {
-        //
+        $this->page->destroy($page);
+
+        Flash::success(trans('page::messages.page deleted'));
+        return Redirect::route('dashboard.page.index');
     }
 
 }
