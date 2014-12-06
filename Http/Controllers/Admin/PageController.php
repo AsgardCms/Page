@@ -9,6 +9,7 @@ use Modules\Page\Repositories\PageRepository;
 
 class PageController extends AdminBaseController
 {
+
     /**
      * @var PageRepository
      */
@@ -56,13 +57,13 @@ class PageController extends AdminBaseController
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int $id
+     * @param  $page
      *
      * @return Response
      */
-    public function edit($id)
+    public function edit($page)
     {
-        return View::make('page::admin.edit');
+        return View::make('page::admin.edit', compact('page'));
     }
 
     /**
