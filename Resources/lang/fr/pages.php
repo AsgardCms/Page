@@ -15,6 +15,7 @@ return [
     ],
     'form' => [
         'title' => 'Titre',
+        'slug' => 'Slug',
         'meta_title' => 'Titre méta',
         'meta_description' => 'Description méta',
         'og_title' => 'Titre Facebook',

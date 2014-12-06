@@ -16,6 +16,11 @@
                         {!! Form::text("{$lang}[title]", Input::old("{$lang}[title]", $page->translate($lang)->title), ['class' => "form-control", 'placeholder' => trans('page::pages.form.title')]) !!}
                         {!! $errors->first("{$lang}[title]", '<span class="help-block">:message</span>') !!}
                     </div>
+                    <div class='form-group{{ $errors->has("{$lang}[slug]") ? ' has-error' : '' }}'>
+                        {!! Form::label("{$lang}[slug]", trans('page::pages.form.slug')) !!}
+                        {!! Form::text("{$lang}[slug]", Input::old("{$lang}[slug]", $page->translate($lang)->slug), ['class' => "form-control", 'placeholder' => trans('page::pages.form.slug')]) !!}
+                        {!! $errors->first("{$lang}[slug]", '<span class="help-block">:message</span>') !!}
+                    </div>
                     <div class='box-body pad'>
                         <textarea class="ckeditor" name="{{$lang}}[body]" rows="10" cols="80">
                             {!! $page->translate($lang)->body !!}
