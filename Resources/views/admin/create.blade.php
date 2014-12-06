@@ -13,6 +13,7 @@
 
 @section('styles')
     <script src="{{ Module::asset('core:js/vendor/ckeditor/ckeditor.js') }}" type="text/javascript"></script>
+    <link href="{!! Module::asset('core:css/vendor/iCheck/flat/blue.css') !!}" rel="stylesheet" type="text/css" />
 @stop
 
 @section('content')
@@ -40,6 +41,17 @@
         <div class="col-md-2">
             <div class="box box-info">
                 <div class="box-body">
+                    <div class="checkbox">
+                        <label for="is_home">
+                            <input id="is_home"
+                                   name="is_home"
+                                   type="checkbox"
+                                   class="flat-blue"
+                                   value="1" />
+                            {{ trans('page::pages.form.is homepage') }}
+                        </label>
+                    </div>
+                    <hr/>
                     <div class='form-group{{ $errors->has("template") ? ' has-error' : '' }}'>
                         {!! Form::label("template", trans('page::pages.form.template')) !!}
                         {!! Form::text("template", Input::old("template"), ['class' => "form-control", 'placeholder' => trans('page::pages.form.template')]) !!}
@@ -61,6 +73,24 @@
                 }
                 config.language = '<?php echo App::getLocale() ?>';
             } );
+        });
+    </script>
+    <script>
+        $( document ).ready(function() {
+            $('input[type="checkbox"].flat-blue, input[type="radio"].flat-blue').iCheck({
+                checkboxClass: 'icheckbox_flat-blue',
+                radioClass: 'iradio_flat-blue'
+            });
+
+            $('input[type="checkbox"]').on('ifChecked', function(){
+                $(this).parent().find('input[type=hidden]').remove();
+            });
+
+            $('input[type="checkbox"]').on('ifUnchecked', function(){
+                var name = $(this).attr('name'),
+                    input = '<input type="hidden" name="' + name + '" value="0" />';
+                $(this).parent().append(input);
+            });
         });
     </script>
 @stop

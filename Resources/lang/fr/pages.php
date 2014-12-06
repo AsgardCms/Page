@@ -20,6 +20,7 @@ return [
         'og_description' => 'Description Facebook',
         'og_type' => 'Type de page',
         'template' => 'Template de la page',
+        'is homepage' => 'Page d\'accueil ?',
     ],
     'facebook-types' => [
         'website' => 'Site internet',
