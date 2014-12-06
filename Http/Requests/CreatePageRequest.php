@@ -18,6 +18,8 @@ class CreatePageRequest extends FormRequest
 
     public function messages()
     {
-        return [];
+        return [
+            'template.required' => trans('page::messages.template is required')
+        ];
     }
 }
