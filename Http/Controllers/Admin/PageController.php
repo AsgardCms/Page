@@ -45,6 +45,10 @@ class PageController extends AdminBaseController
      */
     public function store(CreatePageRequest $request)
     {
+        $this->page->create($request->all());
+
+        Flash::success(trans('page::messages.page created'));
+        return Redirect::route('dashboard.category.index');
     }
 
     /**
