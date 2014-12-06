@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\View;
 use Laracasts\Flash\Flash;
 use Modules\Core\Http\Controllers\Admin\AdminBaseController;
 use Modules\Page\Http\Requests\CreatePageRequest;
+use Modules\Page\Http\Requests\UpdatePageRequest;
 use Modules\Page\Repositories\PageRepository;
 
 class PageController extends AdminBaseController
@@ -43,7 +44,6 @@ class PageController extends AdminBaseController
      * Store a newly created resource in storage.
      *
      * @param CreatePageRequest $request
-     *
      * @return Response
      */
     public function store(CreatePageRequest $request)
@@ -58,7 +58,6 @@ class PageController extends AdminBaseController
      * Show the form for editing the specified resource.
      *
      * @param  $page
-     *
      * @return Response
      */
     public function edit($page)
@@ -69,20 +68,22 @@ class PageController extends AdminBaseController
     /**
      * Update the specified resource in storage.
      *
-     * @param  int $id
-     *
+     * @param $page
+     * @param UpdatePageRequest $request
      * @return Response
      */
-    public function update($id)
+    public function update($page, UpdatePageRequest $request)
     {
-        //
+        $this->page->update($page, $request->all());
+
+        Flash::success(trans('page::messages.page updated'));
+        return Redirect::route('dashboard.page.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param  int $id
-     *
      * @return Response
      */
     public function destroy($id)
