@@ -4,9 +4,10 @@ return [
     'title' => [
         'pages' => 'Pages',
         'create page' => 'Créer une page',
+        'edit page' => 'Editer une page',
     ],
     'button' => [
-        'create page' => 'Créer une page'
+        'create page' => 'Créer une page',
     ],
     'table' => [
         'name' => 'Nom',
