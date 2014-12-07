@@ -15,7 +15,8 @@ if (! App::runningInConsole()) {
         'before' => 'LaravelLocalizationRedirectFilter',
         'namespace' => 'Modules\Page\Http\Controllers'
     ], function (Router $router) {
-        $router->get('{uri}', 'PublicController@uri')->where('uri', '(.*)');
+        $prefix = Config::get('core::core.admin-prefix');
+        $router->get('{uri}', 'PublicController@uri')->where('uri', "(?!$prefix).*");
         $router->get('/', 'PublicController@homepage');
     });
 }
