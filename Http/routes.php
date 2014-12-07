@@ -14,7 +14,7 @@ if (! App::runningInConsole()) {
         'prefix' => $locale,
         'before' => 'LaravelLocalizationRedirectFilter',
         'namespace' => 'Modules\Page\Http\Controllers'
-    ], function (Router $router) use($locale) {
+    ], function (Router $router) {
         $router->get('{uri}', 'PublicController@uri')->where('uri', '(.*)');
         $router->get('/', 'PublicController@homepage');
     });
