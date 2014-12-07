@@ -8,7 +8,18 @@ use Illuminate\Routing\Router;
 |--------------------------------------------------------------------------
 */
 
-$router->get('{uri}', 'Modules\Page\Http\Controllers\PublicController@uri')->where('uri', '(.*)');
+//$router->get('{uri}', 'Modules\Page\Http\Controllers\PublicController@uri')->where('uri', '(.*)');
+if (! App::runningInConsole()) {
+    $locale = LaravelLocalization::setLocale();
+    $router->group([
+        'prefix' => $locale,
+        'before' => 'LaravelLocalizationRedirectFilter',
+        'namespace' => 'Modules\Page\Http\Controllers'
+    ], function (Router $router) use($locale) {
+        $router->get('{uri}', 'PublicController@uri')->where('uri', '(.*)');
+    });
+    $router->get('/', 'PublicController@homepage');
+}
 
 /*
 |--------------------------------------------------------------------------
