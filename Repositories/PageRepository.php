@@ -4,4 +4,9 @@ use Modules\Core\Repositories\BaseRepository;
 
 interface PageRepository extends BaseRepository
 {
+    /**
+     * Find the page set as homepage
+     * @return object
+     */
+    public function findHomepage();
 }
