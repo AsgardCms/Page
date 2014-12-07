@@ -23,30 +23,54 @@ class PublicController extends BasePublicController
         $this->app = $app;
     }
 
+    /**
+     * @param $slug
+     * @return \Illuminate\View\View
+     */
     public function uri($slug)
     {
-        dd('ok?');
-        if ($slug == '/') {
-            $page = $this->page->findHomepage();
-        } else {
-            $page = $this->page->findBySlug($slug);
-        }
-        if (is_null($page)) {
-            $this->app->abort('404');
-        }
+        $page = $this->page->findBySlug($slug);
+
+        $this->throw404IfNotFound($page);
 
         $template = $this->getTemplateForPage($page);
 
         return view($template, compact('page'));
     }
 
+    /**
+     * @return \Illuminate\View\View
+     */
     public function homepage()
     {
-        dd('homepage');
+        $page = $this->page->findHomepage();
+
+        $this->throw404IfNotFound($page);
+
+        $template = $this->getTemplateForPage($page);
+
+        return view($template, compact('page'));
     }
 
+    /**
+     * Return the template for the given page
+     * or the default template if none found
+     * @param $page
+     * @return string
+     */
     private function getTemplateForPage($page)
     {
         return $page->template ?: 'default';
+    }
+
+    /**
+     * Throw a 404 error page if the given page is not found
+     * @param $page
+     */
+    private function throw404IfNotFound($page)
+    {
+        if (is_null($page)) {
+            $this->app->abort('404');
+        }
     }
 }
