@@ -41,7 +41,7 @@
         <div class="col-md-2">
             <div class="box box-info">
                 <div class="box-body">
-                    <div class="checkbox">
+                    <div class="checkbox{{ $errors->has('is_home') ? ' has-error' : '' }}">
                         <label for="is_home">
                             <input id="is_home"
                                    name="is_home"
@@ -50,6 +50,7 @@
                                     {{ isset($page->is_home) && (bool)$page->is_home == true ? 'checked' : '' }}
                                    value="1" />
                             {{ trans('page::pages.form.is homepage') }}
+                            {!! $errors->first('is_home', '<span class="help-block">:message</span>') !!}
                         </label>
                     </div>
                     <hr/>
