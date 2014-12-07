@@ -6,7 +6,7 @@
     </h1>
     <ol class="breadcrumb">
         <li><a href="{{ URL::route('dashboard.index') }}"><i class="fa fa-dashboard"></i> {{ trans('core::core.breadcrumb.home') }}</a></li>
-        <li><a href="{{ URL::route('dashboard.category.index') }}">{{ trans('page::pages.title.pages') }}</a></li>
+        <li><a href="{{ URL::route('dashboard.page.index') }}">{{ trans('page::pages.title.pages') }}</a></li>
         <li class="active">{{ trans('page::pages.title.create page') }}</li>
     </ol>
 @stop
