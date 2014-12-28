@@ -7,6 +7,7 @@ class UpdatePageRequest extends FormRequest
     public function rules()
     {
         $page = $this->route()->getParameter('pages');
+
         return [
             'template' => 'required',
             'is_home' => "unique:pages,is_home,{$page->id}",

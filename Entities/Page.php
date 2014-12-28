@@ -5,7 +5,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Page extends Model
 {
-
     use Translatable;
 
     public $translatedAttributes = [
@@ -19,7 +18,7 @@ class Page extends Model
         'og_title',
         'og_description',
         'og_image',
-        'og_type'
+        'og_type',
     ];
     protected $fillable = [
         'is_home',
@@ -35,6 +34,6 @@ class Page extends Model
         'og_title',
         'og_description',
         'og_image',
-        'og_type'
+        'og_type',
     ];
 }

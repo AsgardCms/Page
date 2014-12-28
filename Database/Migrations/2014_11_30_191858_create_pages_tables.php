@@ -51,5 +51,4 @@ class CreatePagesTables extends Migration
         Schema::drop('page_translations');
         Schema::drop('pages');
     }
-
 }

@@ -36,7 +36,7 @@
                         </thead>
                         <tbody>
                         <?php if (isset($pages)): ?>
-                        <?php foreach($pages as $page): ?>
+                        <?php foreach ($pages as $page): ?>
                         <tr>
                             <td>
                                 <a href="{{ URL::route('dashboard.page.edit', [$page->id]) }}">
@@ -79,7 +79,7 @@
         </div>
     </div>
     <?php if (isset($pages)): ?>
-    <?php foreach($pages as $page): ?>
+    <?php foreach ($pages as $page): ?>
     <!-- Modal -->
     <div class="modal fade" id="confirmation-{{ $page->id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">

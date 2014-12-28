@@ -6,6 +6,6 @@ return [
         'store',
         'edit',
         'update',
-        'destroy'
+        'destroy',
     ],
 ];

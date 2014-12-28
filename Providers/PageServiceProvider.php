@@ -6,7 +6,6 @@ use Modules\Page\Repositories\Eloquent\EloquentPageRepository;
 
 class PageServiceProvider extends ServiceProvider
 {
-
     /**
      * Indicates if loading of the provider is deferred.
      *
@@ -38,10 +37,9 @@ class PageServiceProvider extends ServiceProvider
     {
         $this->app->bind(
             'Modules\Page\Repositories\PageRepository',
-            function() {
-                return new EloquentPageRepository(new Page);
+            function () {
+                return new EloquentPageRepository(new Page());
             }
         );
     }
-
 }

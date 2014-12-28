@@ -5,7 +5,6 @@ use Modules\Page\Repositories\PageRepository;
 
 class BasePageDatabaseSeeder extends Seeder
 {
-
     /**
      * @var PageRepository
      */
@@ -29,7 +28,7 @@ class BasePageDatabaseSeeder extends Seeder
 <h2>What&#39;s next ?</h2>
 <p>Learn how you can develop modules for AsgardCMS by reading our <a href="https://github.com/AsgardCms/Documentation">documentation</a>.</p>
 ',
-                'meta_title' => 'Home page'
+                'meta_title' => 'Home page',
             ],
             'fr' => [
                 'title' => 'Page d\'accueil',

@@ -10,7 +10,6 @@ use Modules\Page\Repositories\PageRepository;
 
 class PageController extends AdminBaseController
 {
-
     /**
      * @var PageRepository
      */
@@ -43,7 +42,7 @@ class PageController extends AdminBaseController
     /**
      * Store a newly created resource in storage.
      *
-     * @param CreatePageRequest $request
+     * @param  CreatePageRequest $request
      * @return Response
      */
     public function store(CreatePageRequest $request)
@@ -51,6 +50,7 @@ class PageController extends AdminBaseController
         $this->page->create($request->all());
 
         Flash::success(trans('page::messages.page created'));
+
         return Redirect::route('dashboard.page.index');
     }
 
@@ -69,7 +69,7 @@ class PageController extends AdminBaseController
      * Update the specified resource in storage.
      *
      * @param $page
-     * @param UpdatePageRequest $request
+     * @param  UpdatePageRequest $request
      * @return Response
      */
     public function update($page, UpdatePageRequest $request)
@@ -77,6 +77,7 @@ class PageController extends AdminBaseController
         $this->page->update($page, $request->all());
 
         Flash::success(trans('page::messages.page updated'));
+
         return Redirect::route('dashboard.page.index');
     }
 
@@ -91,7 +92,7 @@ class PageController extends AdminBaseController
         $this->page->destroy($page);
 
         Flash::success(trans('page::messages.page deleted'));
+
         return Redirect::route('dashboard.page.index');
     }
-
 }

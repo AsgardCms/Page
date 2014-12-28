@@ -6,7 +6,6 @@ use Modules\Page\Repositories\PageRepository;
 
 class PublicController extends BasePublicController
 {
-
     /**
      * @var PageRepository
      */

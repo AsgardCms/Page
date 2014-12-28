@@ -15,6 +15,6 @@ class PageTranslation extends Model
         'og_title',
         'og_description',
         'og_image',
-        'og_type'
+        'og_type',
     ];
 }

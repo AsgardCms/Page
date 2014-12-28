@@ -13,7 +13,7 @@ if (! App::runningInConsole()) {
     $router->group([
         'prefix' => $locale,
         'before' => 'LaravelLocalizationRedirectFilter',
-        'namespace' => 'Modules\Page\Http\Controllers'
+        'namespace' => 'Modules\Page\Http\Controllers',
     ], function (Router $router) {
         $prefix = Config::get('core::core.admin-prefix');
         $router->get('{uri}', 'PublicController@uri')->where('uri', "(?!$prefix).*");
@@ -28,8 +28,7 @@ if (! App::runningInConsole()) {
 */
 $router->model('pages', 'Modules\Page\Entities\Page');
 
-$router->group(['prefix' => LaravelLocalization::setLocale(), 'before' => 'LaravelLocalizationRedirectFilter|auth.admin|permissions'], function(Router $router)
-{
+$router->group(['prefix' => LaravelLocalization::setLocale(), 'before' => 'LaravelLocalizationRedirectFilter|auth.admin|permissions'], function (Router $router) {
     $router->group(['prefix' => Config::get('core::core.admin-prefix'), 'namespace' => 'Modules\Page\Http\Controllers'], function (Router $router) {
 
         $router->resource('pages', 'Admin\PageController', ['except' => ['show'], 'names' => [
