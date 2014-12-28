@@ -1,7 +1,9 @@
 <?php namespace Modules\Page\Providers;
 
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\ServiceProvider;
 use Modules\Page\Entities\Page;
+use Modules\Page\Repositories\Cache\CachePageDecorator;
 use Modules\Page\Repositories\Eloquent\EloquentPageRepository;
 
 class PageServiceProvider extends ServiceProvider
@@ -38,7 +40,13 @@ class PageServiceProvider extends ServiceProvider
         $this->app->bind(
             'Modules\Page\Repositories\PageRepository',
             function () {
-                return new EloquentPageRepository(new Page());
+                $repository = new EloquentPageRepository(new Page());
+
+                if (! Config::get('app.cache')) {
+                    return $repository;
+                }
+
+                return new CachePageDecorator($repository);
             }
         );
     }
