@@ -51,7 +51,7 @@ class PageController extends AdminBaseController
 
         Flash::success(trans('page::messages.page created'));
 
-        return Redirect::route('dashboard.page.index');
+        return Redirect::route('admin.page.page.index');
     }
 
     /**
@@ -78,7 +78,7 @@ class PageController extends AdminBaseController
 
         Flash::success(trans('page::messages.page updated'));
 
-        return Redirect::route('dashboard.page.index');
+        return Redirect::route('admin.page.page.index');
     }
 
     /**
@@ -93,6 +93,6 @@ class PageController extends AdminBaseController
 
         Flash::success(trans('page::messages.page deleted'));
 
-        return Redirect::route('dashboard.page.index');
+        return Redirect::route('admin.page.page.index');
     }
 }

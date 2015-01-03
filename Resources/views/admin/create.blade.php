@@ -6,7 +6,7 @@
     </h1>
     <ol class="breadcrumb">
         <li><a href="{{ URL::route('dashboard.index') }}"><i class="fa fa-dashboard"></i> {{ trans('core::core.breadcrumb.home') }}</a></li>
-        <li><a href="{{ URL::route('dashboard.page.index') }}">{{ trans('page::pages.title.pages') }}</a></li>
+        <li><a href="{{ URL::route('admin.page.page.index') }}">{{ trans('page::pages.title.pages') }}</a></li>
         <li class="active">{{ trans('page::pages.title.create page') }}</li>
     </ol>
 @stop
@@ -17,7 +17,7 @@
 @stop
 
 @section('content')
-    {!! Form::open(['route' => ['dashboard.page.store'], 'method' => 'post']) !!}
+    {!! Form::open(['route' => ['admin.page.page.store'], 'method' => 'post']) !!}
     <div class="row">
         <div class="col-md-10">
             <div class="nav-tabs-custom">
@@ -33,7 +33,7 @@
 
                     <div class="box-footer">
                         <button type="submit" class="btn btn-primary btn-flat">{{ trans('core::core.button.create') }}</button>
-                        <a class="btn btn-danger pull-right btn-flat" href="{{ URL::route('dashboard.page.index')}}"><i class="fa fa-times"></i> {{ trans('core::core.button.cancel') }}</a>
+                        <a class="btn btn-danger pull-right btn-flat" href="{{ URL::route('admin.page.page.index')}}"><i class="fa fa-times"></i> {{ trans('core::core.button.cancel') }}</a>
                     </div>
                 </div>
             </div> {{-- end nav-tabs-custom --}}

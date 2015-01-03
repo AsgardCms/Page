@@ -1,6 +1,6 @@
 <?php
 return [
-    'pages' => [
+    'page.pages' => [
         'index',
         'create',
         'store',

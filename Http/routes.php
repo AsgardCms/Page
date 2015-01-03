@@ -29,15 +29,15 @@ if (! App::runningInConsole()) {
 $router->model('pages', 'Modules\Page\Entities\Page');
 
 $router->group(['prefix' => LaravelLocalization::setLocale(), 'before' => 'LaravelLocalizationRedirectFilter|auth.admin|permissions'], function (Router $router) {
-    $router->group(['prefix' => Config::get('core::core.admin-prefix'), 'namespace' => 'Modules\Page\Http\Controllers'], function (Router $router) {
+    $router->group(['prefix' => Config::get('core::core.admin-prefix') . '/page', 'namespace' => 'Modules\Page\Http\Controllers'], function (Router $router) {
 
         $router->resource('pages', 'Admin\PageController', ['except' => ['show'], 'names' => [
-            'index' => 'dashboard.page.index',
-            'create' => 'dashboard.page.create',
-            'store' => 'dashboard.page.store',
-            'edit' => 'dashboard.page.edit',
-            'update' => 'dashboard.page.update',
-            'destroy' => 'dashboard.page.destroy',
+            'index' => 'admin.page.page.index',
+            'create' => 'admin.page.page.create',
+            'store' => 'admin.page.page.store',
+            'edit' => 'admin.page.page.edit',
+            'update' => 'admin.page.page.update',
+            'destroy' => 'admin.page.page.destroy',
         ]]);
     });
 

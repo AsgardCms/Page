@@ -1,16 +1,16 @@
 {
-  "name": "Page",
-  "alias": "page",
-  "description": "",
-  "keywords": [],
-  "active": 1,
-  "priority": 1,
-  "providers": [
-    "Modules\\Page\\Providers\\RouteServiceProvider",
-    "Modules\\Page\\Providers\\PageServiceProvider"
-  ],
-  "files": [
-    "start.php",
-    "composers.php"
-  ]
+    "name": "Page",
+    "alias": "page",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "priority": 1,
+    "providers": [
+        "Modules\\Page\\Providers\\RouteServiceProvider",
+        "Modules\\Page\\Providers\\PageServiceProvider"
+    ],
+    "files": [
+        "start.php",
+        "composers.php"
+    ]
 }
