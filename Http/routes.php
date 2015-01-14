@@ -29,7 +29,7 @@ if (! App::runningInConsole()) {
 $router->model('pages', 'Modules\Page\Entities\Page');
 
 $router->group(['prefix' => LaravelLocalization::setLocale(), 'before' => 'LaravelLocalizationRedirectFilter|auth.admin|permissions'], function (Router $router) {
-    $router->group(['prefix' => Config::get('core::core.admin-prefix') . '/page', 'namespace' => 'Modules\Page\Http\Controllers'], function (Router $router) {
+    $router->group(['prefix' => Config::get('core::core.admin-prefix').'/page', 'namespace' => 'Modules\Page\Http\Controllers'], function (Router $router) {
 
         $router->resource('pages', 'Admin\PageController', ['except' => ['show'], 'names' => [
             'index' => 'admin.page.page.index',
