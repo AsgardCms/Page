@@ -28,5 +28,5 @@ return [
         'website' => 'Website',
         'product' => 'Product',
         'article' => 'Article',
-    ]
+    ],
 ];

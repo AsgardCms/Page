@@ -23,7 +23,7 @@ class UpdatePageRequest extends FormRequest
     {
         return [
             'template.required' => trans('page::messages.template is required'),
-            'is_home.unique' => trans('page::messages.only one homepage allowed')
+            'is_home.unique' => trans('page::messages.only one homepage allowed'),
         ];
     }
 }

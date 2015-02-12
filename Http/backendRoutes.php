@@ -2,7 +2,6 @@
 
 use Illuminate\Routing\Router;
 /** @var Router $router */
-
 $router->model('pages', 'Modules\Page\Entities\Page');
 
 $router->group(['prefix' => '/page'], function (Router $router) {

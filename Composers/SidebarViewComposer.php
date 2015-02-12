@@ -13,7 +13,7 @@ class SidebarViewComposer extends BaseSidebarViewComposer
             'route' => 'admin.page.page.index',
             'icon-class' => 'fa fa-file',
             'title' => 'Pages',
-            'permission' => $this->auth->hasAccess('page.pages.index')
+            'permission' => $this->auth->hasAccess('page.pages.index'),
         ]);
     }
 }
