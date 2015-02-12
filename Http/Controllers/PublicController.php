@@ -59,7 +59,7 @@ class PublicController extends BasePublicController
      */
     private function getTemplateForPage($page)
     {
-        return $page->template ?: 'basic-content';
+        return $page->template ?: 'default';
     }
 
     /**
