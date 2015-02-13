@@ -11,6 +11,7 @@ class SidebarViewComposer extends BaseSidebarViewComposer
     {
         $view->sidebar->group('Pages', function (SidebarGroup $group) {
             $group->enabled = false;
+            $group->weight = 5;
 
             $group->addItem('Pages', function (SidebarItem $item) {
                 $item->route('admin.page.page.index');
