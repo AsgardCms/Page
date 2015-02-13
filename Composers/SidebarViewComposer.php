@@ -1,19 +1,25 @@
 <?php namespace Modules\Page\Composers;
 
 use Illuminate\Contracts\View\View;
+use Maatwebsite\Sidebar\SidebarGroup;
+use Maatwebsite\Sidebar\SidebarItem;
 use Modules\Core\Composers\BaseSidebarViewComposer;
 
 class SidebarViewComposer extends BaseSidebarViewComposer
 {
     public function compose(View $view)
     {
-        $view->items->put('pages', [
-            'weight' => 5,
-            'request' => "*/$view->prefix/page/pages*",
-            'route' => 'admin.page.page.index',
-            'icon-class' => 'fa fa-file',
-            'title' => 'Pages',
-            'permission' => $this->auth->hasAccess('page.pages.index'),
-        ]);
+        $view->sidebar->group('Pages', function (SidebarGroup $group) {
+            $group->enabled = false;
+
+            $group->addItem('Pages', function (SidebarItem $item) {
+                $item->route('admin.page.page.index');
+                $item->icon = 'fa fa-file';
+                $item->name = 'Pages';
+                $item->authorize(
+                    $this->auth->hasAccess('page.pages.index')
+                );
+            });
+        });
     }
 }
