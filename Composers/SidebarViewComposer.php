@@ -4,6 +4,7 @@ use Illuminate\Contracts\View\View;
 use Maatwebsite\Sidebar\SidebarGroup;
 use Maatwebsite\Sidebar\SidebarItem;
 use Modules\Core\Composers\BaseSidebarViewComposer;
+use Modules\Page\Repositories\PageRepository;
 
 class SidebarViewComposer extends BaseSidebarViewComposer
 {
@@ -15,6 +16,10 @@ class SidebarViewComposer extends BaseSidebarViewComposer
 
             $group->addItem('Pages', function (SidebarItem $item) {
                 // $item->append('admin.page.page.create');
+                $item->badge(function($append, PageRepository $page)
+                {
+                    $append->value = $page->countAll();
+                });
                 $item->route('admin.page.page.index');
                 $item->icon = 'fa fa-file';
                 $item->name = 'Pages';
