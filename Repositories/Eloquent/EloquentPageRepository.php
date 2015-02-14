@@ -13,4 +13,13 @@ class EloquentPageRepository extends EloquentBaseRepository implements PageRepos
     {
         return $this->model->where('is_home', 1)->first();
     }
+
+    /**
+     * Count all records
+     * @return int
+     */
+    public function countAll()
+    {
+        return $this->model->count();
+    }
 }
