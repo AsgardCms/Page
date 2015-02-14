@@ -105,11 +105,10 @@
 @stop
 
 @section('scripts')
-    <script src="{{ Module::asset('core:js/keypresAction.js') }}" type="text/javascript"></script>
     <?php $locale = App::getLocale(); ?>
     <script type="text/javascript">
         $( document ).ready(function() {
-            $(document).keypresAction({
+            $(document).keypressAction({
                 actions: [
                     { key: 99, route: "<?= route('admin.page.page.create') ?>" }
                 ]
