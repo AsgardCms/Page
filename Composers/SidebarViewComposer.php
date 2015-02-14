@@ -14,6 +14,7 @@ class SidebarViewComposer extends BaseSidebarViewComposer
             $group->weight = 5;
 
             $group->addItem('Pages', function (SidebarItem $item) {
+                // $item->append('admin.page.page.create');
                 $item->route('admin.page.page.index');
                 $item->icon = 'fa fa-file';
                 $item->name = 'Pages';
