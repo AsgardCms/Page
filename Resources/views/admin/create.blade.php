@@ -12,8 +12,8 @@
 @stop
 
 @section('styles')
-    <script src="{{ Module::asset('core:js/vendor/ckeditor/ckeditor.js') }}" type="text/javascript"></script>
-    <link href="{!! Module::asset('core:css/vendor/iCheck/flat/blue.css') !!}" rel="stylesheet" type="text/css" />
+    {!! Theme::script('js/vendor/ckeditor/ckeditor.js') !!}
+    {!! Theme::style('css/vendor/iCheck/flat/blue.css') !!}
 @stop
 
 @section('content')
