@@ -16,8 +16,7 @@ class SidebarViewComposer extends BaseSidebarViewComposer
 
             $group->addItem('Pages', function (SidebarItem $item) {
                 // $item->append('admin.page.page.create');
-                $item->badge(function($append, PageRepository $page)
-                {
+                $item->badge(function ($append, PageRepository $page) {
                     $append->value = $page->countAll();
                 });
                 $item->route('admin.page.page.index');
