@@ -15,7 +15,6 @@ class SidebarViewComposer extends BaseSidebarViewComposer
             $group->weight = 5;
 
             $group->addItem('Pages', function (SidebarItem $item) {
-                // $item->append('admin.page.page.create');
                 $item->badge(function ($append, PageRepository $page) {
                     $append->value = $page->countAll();
                 });
