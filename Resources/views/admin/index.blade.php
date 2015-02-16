@@ -104,9 +104,28 @@
     <?php endif; ?>
 @stop
 
+@section('footer')
+    <p class="text-muted">
+        <a data-toggle="modal" data-target="#keyboardShortcutsModal"><i class="fa fa-keyboard-o"></i></a>
+    </p>
+@stop
+@section('shortcuts')
+    <dl class="dl-horizontal">
+        <dt><code>c</code></dt>
+        <dd>{{ trans('page::pages.title.create page') }}</dd>
+    </dl>
+@stop
+
 @section('scripts')
     <?php $locale = App::getLocale(); ?>
     <script type="text/javascript">
+        $( document ).ready(function() {
+            $(document).keypressAction({
+                actions: [
+                    { key: 99, route: "<?= route('admin.page.page.create') ?>" }
+                ]
+            });
+        });
         $(function () {
             $('.data-table').dataTable({
                 "paginate": true,

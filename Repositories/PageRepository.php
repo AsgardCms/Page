@@ -9,4 +9,10 @@ interface PageRepository extends BaseRepository
      * @return object
      */
     public function findHomepage();
+
+    /**
+     * Count all records
+     * @return int
+     */
+    public function countAll();
 }

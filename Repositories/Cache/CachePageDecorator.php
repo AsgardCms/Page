@@ -32,4 +32,19 @@ class CachePageDecorator extends BaseCacheDecorator implements PageRepository
                 }
             );
     }
+
+    /**
+     * Count all records
+     * @return int
+     */
+    public function countAll()
+    {
+        return $this->cache
+            ->tags($this->entityName, 'global')
+            ->remember("{$this->locale}.{$this->entityName}.countAll", $this->cacheTime,
+                function () {
+                    return $this->repository->countAll();
+                }
+            );
+    }
 }
