@@ -10,17 +10,14 @@ class SidebarViewComposer extends BaseSidebarViewComposer
 {
     public function compose(View $view)
     {
-        $view->sidebar->group('Pages', function (SidebarGroup $group) {
-            $group->enabled = false;
-            $group->weight = 5;
-
-            $group->addItem('Pages', function (SidebarItem $item) {
+        $view->sidebar->group(trans('core::sidebar.content'), function (SidebarGroup $group) {
+            $group->addItem(trans('page::pages.title.pages'), function (SidebarItem $item) {
+                $item->icon = 'fa fa-file';
+                $item->weight = 1;
+                $item->route('admin.page.page.index');
                 $item->badge(function ($append, PageRepository $page) {
                     $append->value = $page->countAll();
                 });
-                $item->route('admin.page.page.index');
-                $item->icon = 'fa fa-file';
-                $item->name = 'Pages';
                 $item->authorize(
                     $this->auth->hasAccess('page.pages.index')
                 );
