@@ -29,4 +29,7 @@ return [
         'product' => 'Produit',
         'article' => 'Article',
     ],
+    'navigation' => [
+        'back to index' => 'Retour vers l\'index des pages'
+    ]
 ];
