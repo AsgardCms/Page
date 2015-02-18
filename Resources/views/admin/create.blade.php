@@ -65,6 +65,19 @@
 
     {!! Form::close() !!}
 @stop
+
+@section('footer')
+    <p class="text-muted">
+        <a data-toggle="modal" data-target="#keyboardShortcutsModal"><i class="fa fa-keyboard-o"></i></a>
+    </p>
+@stop
+@section('shortcuts')
+    <dl class="dl-horizontal">
+        <dt><code>b</code></dt>
+        <dd>{{ trans('page::pages.navigation.back to index') }}</dd>
+    </dl>
+@stop
+
 @section('scripts')
     <script type="text/javascript">
         $(function() {
@@ -78,6 +91,11 @@
     </script>
     <script>
         $( document ).ready(function() {
+            $(document).keypressAction({
+                actions: [
+                    { key: 'b', route: "<?= route('admin.page.page.index') ?>" }
+                ]
+            });
             $('input[type="checkbox"].flat-blue, input[type="radio"].flat-blue').iCheck({
                 checkboxClass: 'icheckbox_flat-blue',
                 radioClass: 'iradio_flat-blue'
