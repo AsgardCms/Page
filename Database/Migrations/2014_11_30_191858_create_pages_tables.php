@@ -36,7 +36,7 @@ class CreatePagesTables extends Migration
             $table->string('og_type');
 
             $table->unique(['page_id', 'locale']);
-            $table->foreign('page_id')->references('id')->on('pages')->onDelete('cascade');
+            $table->foreign('page_id')->references('id')->on('page__pages')->onDelete('cascade');
             $table->timestamps();
         });
     }
