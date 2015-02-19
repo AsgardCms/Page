@@ -4,6 +4,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class PageTranslation extends Model
 {
+    protected $table = 'page__page_translations';
     protected $fillable = [
         'page_id',
         'title',

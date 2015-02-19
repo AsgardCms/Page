@@ -7,6 +7,7 @@ class Page extends Model
 {
     use Translatable;
 
+    protected $table = 'page__pages';
     public $translatedAttributes = [
         'page_id',
         'title',

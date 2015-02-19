@@ -8,7 +8,7 @@ class CreatePageRequest extends FormRequest
     {
         return [
             'template' => 'required',
-            'is_home' => 'unique:pages',
+            'is_home' => 'unique:page__pages',
         ];
     }
 

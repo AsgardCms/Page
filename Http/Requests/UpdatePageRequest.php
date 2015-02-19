@@ -10,7 +10,7 @@ class UpdatePageRequest extends FormRequest
 
         return [
             'template' => 'required',
-            'is_home' => "unique:pages,is_home,{$page->id}",
+            'is_home' => "unique:page__pages,is_home,{$page->id}",
         ];
     }
 

@@ -12,14 +12,14 @@ class CreatePagesTables extends Migration
      */
     public function up()
     {
-        Schema::create('pages', function (Blueprint $table) {
+        Schema::create('page__pages', function (Blueprint $table) {
             $table->increments('id');
             $table->boolean('is_home');
             $table->string('template');
             $table->timestamps();
         });
 
-        Schema::create('page_translations', function (Blueprint $table) {
+        Schema::create('page__page_translations', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('page_id')->unsigned();
             $table->string('locale')->index();
@@ -48,7 +48,7 @@ class CreatePagesTables extends Migration
      */
     public function down()
     {
-        Schema::drop('page_translations');
-        Schema::drop('pages');
+        Schema::drop('page__page_translations');
+        Schema::drop('page__pages');
     }
 }
