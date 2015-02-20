@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Routing\Router;
+
 /** @var Router $router */
 $router->model('pages', 'Modules\Page\Entities\Page');
 
