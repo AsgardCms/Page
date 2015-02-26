@@ -1,6 +1,5 @@
 <?php namespace Modules\Page\Http\Controllers\Admin;
 
-use FloatingPoint\Stylist\Theme\Theme;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 use Laracasts\Flash\Flash;
