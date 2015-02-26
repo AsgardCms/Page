@@ -11,11 +11,6 @@
     </ol>
 @stop
 
-@section('styles')
-    {!! Theme::script('js/vendor/ckeditor/ckeditor.js') !!}
-    {!! Theme::style('css/vendor/iCheck/flat/blue.css') !!}
-@stop
-
 @section('content')
     {!! Form::open(['route' => ['admin.page.page.update', $page->id], 'method' => 'put']) !!}
     <div class="row">

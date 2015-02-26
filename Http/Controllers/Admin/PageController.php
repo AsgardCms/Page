@@ -1,5 +1,6 @@
 <?php namespace Modules\Page\Http\Controllers\Admin;
 
+use FloatingPoint\Stylist\Theme\Theme;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 use Laracasts\Flash\Flash;
@@ -62,6 +63,9 @@ class PageController extends AdminBaseController
      */
     public function edit($page)
     {
+        $this->assetPipeline->requireJs('ckeditor.js');
+        $this->assetPipeline->requireCss('icheck.blue.css');
+
         return View::make('page::admin.edit', compact('page'));
     }
 
