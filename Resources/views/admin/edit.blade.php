@@ -34,7 +34,7 @@
             </div> {{-- end nav-tabs-custom --}}
         </div>
         <div class="col-md-2">
-            <div class="box box-info">
+            <div class="box box-primary">
                 <div class="box-body">
                     <div class="checkbox{{ $errors->has('is_home') ? ' has-error' : '' }}">
                         <label for="is_home">
