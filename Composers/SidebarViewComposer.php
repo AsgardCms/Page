@@ -16,6 +16,7 @@ class SidebarViewComposer extends BaseSidebarViewComposer
                 $item->weight = 1;
                 $item->route('admin.page.page.index');
                 $item->badge(function ($append, PageRepository $page) {
+                    $append->color = 'bg-green';
                     $append->value = $page->countAll();
                 });
                 $item->authorize(
