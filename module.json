@@ -1,8 +1,9 @@
 {
     "name": "Page",
     "alias": "page",
-    "description": "",
+    "description": "Managing pages.",
     "keywords": [],
+    "version": "v0.1.0",
     "active": 1,
     "order": 9999,
     "providers": [
