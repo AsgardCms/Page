@@ -13,17 +13,20 @@
                 <div class="box-body">
                     <div class='form-group{{ $errors->has("{$lang}[title]") ? ' has-error' : '' }}'>
                         {!! Form::label("{$lang}[title]", trans('page::pages.form.title')) !!}
-                        {!! Form::text("{$lang}[title]", Input::old("{$lang}[title]", $page->translate($lang)->title), ['class' => "form-control", 'placeholder' => trans('page::pages.form.title')]) !!}
+                        <?php $old = isset($product->translate($lang)->title) ? $product->translate($lang)->title : '' ?>
+                        {!! Form::text("{$lang}[title]", Input::old("{$lang}[title]", $old), ['class' => "form-control", 'placeholder' => trans('page::pages.form.title')]) !!}
                         {!! $errors->first("{$lang}[title]", '<span class="help-block">:message</span>') !!}
                     </div>
                     <div class='form-group{{ $errors->has("{$lang}[slug]") ? ' has-error' : '' }}'>
                         {!! Form::label("{$lang}[slug]", trans('page::pages.form.slug')) !!}
-                        {!! Form::text("{$lang}[slug]", Input::old("{$lang}[slug]", $page->translate($lang)->slug), ['class' => "form-control", 'placeholder' => trans('page::pages.form.slug')]) !!}
+                        <?php $old = isset($product->translate($lang)->slug) ? $product->translate($lang)->slug : '' ?>
+                        {!! Form::text("{$lang}[slug]", Input::old("{$lang}[slug]", $old), ['class' => "form-control", 'placeholder' => trans('page::pages.form.slug')]) !!}
                         {!! $errors->first("{$lang}[slug]", '<span class="help-block">:message</span>') !!}
                     </div>
                     <div class='box-body pad'>
+                        <?php $old = isset($product->translate($lang)->body) ? $product->translate($lang)->body : '' ?>
                         <textarea class="ckeditor" name="{{$lang}}[body]" rows="10" cols="80">
-                            {!! $page->translate($lang)->body !!}
+                            {!! $old !!}
                         </textarea>
                     </div>
                 </div>
