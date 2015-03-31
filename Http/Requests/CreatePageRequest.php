@@ -16,7 +16,7 @@ class CreatePageRequest extends BaseFormRequest
     public function translationRules()
     {
         return [
-            'name' => 'required',
+            'title' => 'required',
             'slug' => 'required,unique:page__pages',
         ];
     }
