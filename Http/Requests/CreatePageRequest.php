@@ -1,14 +1,23 @@
 <?php namespace Modules\Page\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Modules\Core\Internationalisation\BaseFormRequest;
 
-class CreatePageRequest extends FormRequest
+class CreatePageRequest extends BaseFormRequest
 {
     public function rules()
     {
         return [
             'template' => 'required',
             'is_home' => 'unique:page__pages',
+        ];
+    }
+
+    public function translationRules()
+    {
+        return [
+            'name' => 'required',
+            'slug' => 'required,unique:page__pages',
         ];
     }
 
