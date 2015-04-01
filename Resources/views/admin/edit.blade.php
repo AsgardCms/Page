@@ -11,6 +11,16 @@
     </ol>
 @stop
 
+@section('styles')
+    {!! Theme::script('js/vendor/ckeditor/ckeditor.js') !!}
+    {!! Theme::style('css/vendor/iCheck/flat/blue.css') !!}
+    <style>
+        .checkbox label {
+            padding-left: 0;
+        }
+    </style>
+@stop
+
 @section('content')
     {!! Form::open(['route' => ['admin.page.page.update', $page->id], 'method' => 'put']) !!}
     <div class="row">
@@ -75,12 +85,12 @@
 @section('scripts')
     <script type="text/javascript">
         $(function() {
-            CKEDITOR.replaceAll(function( textarea, config ) {
+           /* CKEDITOR.replaceAll(function( textarea, config ) {
                 if (!$(textarea).hasClass('ckeditor')) {
                     return false;
                 }
                 config.language = '<?php echo App::getLocale() ?>';
-            } );
+            } );*/
         });
     </script>
     <script>
