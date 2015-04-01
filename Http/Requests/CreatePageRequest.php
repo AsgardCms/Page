@@ -34,4 +34,12 @@ class CreatePageRequest extends BaseFormRequest
             'is_home.unique' => trans('page::messages.only one homepage allowed'),
         ];
     }
+
+    public function translationMessages()
+    {
+        return [
+            'title.required' => trans('page::messages.title is required'),
+            'body.required' => trans('page::messages.body is required'),
+        ];
+    }
 }

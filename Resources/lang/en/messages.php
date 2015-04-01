@@ -7,5 +7,7 @@ return [
     'page deleted' => 'Page successfully deleted.',
 
     'template is required' => 'The template name is required.',
+    'title is required' => 'The title is required.',
+    'body is required' => 'The body is required.',
     'only one homepage allowed' => 'Only one homepage is allowed',
 ];
