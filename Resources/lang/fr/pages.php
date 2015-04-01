@@ -23,6 +23,7 @@ return [
         'og_type' => 'Type de page',
         'template' => 'Template de la page',
         'is homepage' => 'Page d\'accueil ?',
+        'body' => 'Contenu',
     ],
     'facebook-types' => [
         'website' => 'Site internet',

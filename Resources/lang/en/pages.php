@@ -23,6 +23,7 @@ return [
         'og_type' => 'Facebook type',
         'template' => 'Page template name',
         'is homepage' => 'Homepage ?',
+        'body' => 'Body',
     ],
     'facebook-types' => [
         'website' => 'Website',
