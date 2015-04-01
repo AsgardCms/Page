@@ -1,6 +1,5 @@
 <?php namespace Modules\Page\Http\Requests;
 
-use Illuminate\Foundation\Http\FormRequest;
 use Modules\Core\Internationalisation\BaseFormRequest;
 
 class CreatePageRequest extends BaseFormRequest
