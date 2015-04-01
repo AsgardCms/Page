@@ -1,9 +1,11 @@
 <?php namespace Modules\Page\Http\Requests;
 
-use Illuminate\Foundation\Http\FormRequest;
+use Modules\Core\Internationalisation\BaseFormRequest;
 
-class UpdatePageRequest extends FormRequest
+class UpdatePageRequest extends BaseFormRequest
 {
+    protected $translationsAttributesKey = 'page::pages.validation.attributes';
+
     public function rules()
     {
         $page = $this->route()->getParameter('pages');
@@ -11,6 +13,14 @@ class UpdatePageRequest extends FormRequest
         return [
             'template' => 'required',
             'is_home' => "unique:page__pages,is_home,{$page->id}",
+        ];
+    }
+
+    public function translationRules()
+    {
+        return [
+            'title' => 'required',
+            'body' => 'required',
         ];
     }
 

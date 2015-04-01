@@ -25,6 +25,12 @@ return [
         'is homepage' => 'Page d\'accueil ?',
         'body' => 'Contenu',
     ],
+    'validation' => [
+        'attributes' => [
+            'title' => 'titre',
+            'body' => 'contenu',
+        ],
+    ],
     'facebook-types' => [
         'website' => 'Site internet',
         'product' => 'Produit',

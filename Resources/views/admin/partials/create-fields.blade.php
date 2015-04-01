@@ -11,19 +11,21 @@
             </div>
             <div style="height: 0px;" id="collapseOne-{{$lang}}" class="panel-collapse collapse">
                 <div class="box-body">
-                    <div class='form-group{{ $errors->has("{$lang}[title]") ? ' has-error' : '' }}'>
+                    <div class='form-group{{ $errors->has("{$lang}.title") ? ' has-error' : '' }}'>
                         {!! Form::label("{$lang}[title]", trans('page::pages.form.title')) !!}
                         {!! Form::text("{$lang}[title]", Input::old("{$lang}[title]"), ['class' => "form-control", 'placeholder' => trans('page::pages.form.title')]) !!}
-                        {!! $errors->first("{$lang}[title]", '<span class="help-block">:message</span>') !!}
+                        {!! $errors->first("{$lang}.title", '<span class="help-block">:message</span>') !!}
                     </div>
-                    <div class='form-group{{ $errors->has("{$lang}[slug]") ? ' has-error' : '' }}'>
+                    <div class='form-group{{ $errors->has("{$lang}.slug") ? ' has-error' : '' }}'>
                         {!! Form::label("{$lang}[slug]", trans('page::pages.form.slug')) !!}
                         {!! Form::text("{$lang}[slug]", Input::old("{$lang}[slug]"), ['class' => "form-control", 'placeholder' => trans('page::pages.form.slug')]) !!}
-                        {!! $errors->first("{$lang}[slug]", '<span class="help-block">:message</span>') !!}
+                        {!! $errors->first("{$lang}.slug", '<span class="help-block">:message</span>') !!}
                     </div>
-                    <div class='box-body pad'>
+                    <div class='{{ $errors->has("{$lang}.body") ? ' has-error' : '' }}'>
+                        {!! Form::label("{$lang}[body]", trans('page::pages.form.body')) !!}
                         <textarea class="ckeditor" name="{{$lang}}[body]" rows="10" cols="80">
                         </textarea>
+                        {!! $errors->first("{$lang}.body", '<span class="help-block">:message</span>') !!}
                     </div>
                 </div>
             </div>

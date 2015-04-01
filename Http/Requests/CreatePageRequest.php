@@ -4,6 +4,8 @@ use Modules\Core\Internationalisation\BaseFormRequest;
 
 class CreatePageRequest extends BaseFormRequest
 {
+    protected $translationsAttributesKey = 'page::pages.validation.attributes';
+
     public function rules()
     {
         return [
@@ -16,7 +18,7 @@ class CreatePageRequest extends BaseFormRequest
     {
         return [
             'title' => 'required',
-            'slug' => 'required,unique:page__pages',
+            'body' => 'required',
         ];
     }
 
