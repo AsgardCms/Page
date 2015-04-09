@@ -1,39 +1,28 @@
 <div class="box-body">
-    <div class="box-group" id="accordion">
-        <!-- we are adding the .panel class so bootstrap.js collapse plugin detects it -->
-        <div class="panel box box-primary">
-            <div class="box-header">
-                <h4 class="box-title">
-                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne-{{$lang}}">
-                        Content
-                    </a>
-                </h4>
-            </div>
-            <div style="height: 0px;" id="collapseOne-{{$lang}}" class="panel-collapse collapse">
-                <div class="box-body">
-                    <div class='form-group{{ $errors->has("{$lang}.title") ? ' has-error' : '' }}'>
-                        {!! Form::label("{$lang}[title]", trans('page::pages.form.title')) !!}
-                        <?php $old = $page->hasTranslation($lang) ? $page->translate($lang)->title : '' ?>
-                        {!! Form::text("{$lang}[title]", Input::old("{$lang}[title]", $old), ['class' => "form-control", 'placeholder' => trans('page::pages.form.title')]) !!}
-                        {!! $errors->first("{$lang}.title", '<span class="help-block">:message</span>') !!}
-                    </div>
-                    <div class='form-group{{ $errors->has("{$lang}[slug]") ? ' has-error' : '' }}'>
-                        {!! Form::label("{$lang}[slug]", trans('page::pages.form.slug')) !!}
-                        <?php $old = $page->hasTranslation($lang) ? $page->translate($lang)->slug : '' ?>
-                        {!! Form::text("{$lang}[slug]", Input::old("{$lang}[slug]", $old), ['class' => "form-control", 'placeholder' => trans('page::pages.form.slug')]) !!}
-                        {!! $errors->first("{$lang}.slug", '<span class="help-block">:message</span>') !!}
-                    </div>
-                    <div class='{{ $errors->has("{$lang}.body") ? ' has-error' : '' }}'>
-                        {!! Form::label("{$lang}[body]", trans('page::pages.form.body')) !!}
-                        <?php $old = $page->hasTranslation($lang) ? $page->translate($lang)->body : '' ?>
-                        <textarea class="ckeditor" name="{{$lang}}[body]" rows="10" cols="80">
+    <div class="box-body">
+        <div class='form-group{{ $errors->has("{$lang}.title") ? ' has-error' : '' }}'>
+            {!! Form::label("{$lang}[title]", trans('page::pages.form.title')) !!}
+            <?php $old = $page->hasTranslation($lang) ? $page->translate($lang)->title : '' ?>
+            {!! Form::text("{$lang}[title]", Input::old("{$lang}[title]", $old), ['class' => "form-control", 'placeholder' => trans('page::pages.form.title')]) !!}
+            {!! $errors->first("{$lang}.title", '<span class="help-block">:message</span>') !!}
+        </div>
+        <div class='form-group{{ $errors->has("{$lang}[slug]") ? ' has-error' : '' }}'>
+            {!! Form::label("{$lang}[slug]", trans('page::pages.form.slug')) !!}
+            <?php $old = $page->hasTranslation($lang) ? $page->translate($lang)->slug : '' ?>
+            {!! Form::text("{$lang}[slug]", Input::old("{$lang}[slug]", $old), ['class' => "form-control", 'placeholder' => trans('page::pages.form.slug')]) !!}
+            {!! $errors->first("{$lang}.slug", '<span class="help-block">:message</span>') !!}
+        </div>
+        <div class='{{ $errors->has("{$lang}.body") ? ' has-error' : '' }}'>
+            {!! Form::label("{$lang}[body]", trans('page::pages.form.body')) !!}
+            <?php $old = $page->hasTranslation($lang) ? $page->translate($lang)->body : '' ?>
+            <textarea class="ckeditor" name="{{$lang}}[body]" rows="10" cols="80">
                             {!! $old !!}
                         </textarea>
-                        {!! $errors->first("{$lang}.body", '<span class="help-block">:message</span>') !!}
-                    </div>
-                </div>
-            </div>
+            {!! $errors->first("{$lang}.body", '<span class="help-block">:message</span>') !!}
         </div>
+    </div>
+    <div class="box-group" id="accordion">
+        <!-- we are adding the .panel class so bootstrap.js collapse plugin detects it -->
         <div class="panel box box-primary">
             <div class="box-header">
                 <h4 class="box-title">
