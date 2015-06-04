@@ -14,7 +14,7 @@ class CreatePagesTables extends Migration
     {
         Schema::create('page__pages', function (Blueprint $table) {
             $table->increments('id');
-            $table->boolean('is_home');
+            $table->boolean('is_home')->default(0);
             $table->string('template');
             $table->timestamps();
         });
