@@ -26,7 +26,7 @@ class CreatePagesTables extends Migration
 
             $table->string('title');
             $table->string('slug');
-            $table->boolean('status');
+            $table->boolean('status')->default(1);
             $table->text('body');
             $table->string('meta_title');
             $table->string('meta_description');
