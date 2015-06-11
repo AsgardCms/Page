@@ -12,8 +12,7 @@
         </div>
         <div class='{{ $errors->has("{$lang}.body") ? ' has-error' : '' }}'>
             {!! Form::label("{$lang}[body]", trans('page::pages.form.body')) !!}
-            <textarea class="ckeditor" name="{{$lang}}[body]" rows="10" cols="80">
-                        </textarea>
+            <textarea class="ckeditor" name="{{$lang}}[body]" rows="10" cols="80">{{ old("{$lang}.body") }}</textarea>
             {!! $errors->first("{$lang}.body", '<span class="help-block">:message</span>') !!}
         </div>
     </div>
@@ -31,12 +30,12 @@
                 <div class="box-body">
                     <div class='form-group{{ $errors->has("{$lang}[meta_title]") ? ' has-error' : '' }}'>
                         {!! Form::label("{$lang}[meta_title]", trans('page::pages.form.meta_title')) !!}
-                        {!! Form::text("{$lang}[meta_title]", Input::old("{$lang}[meta_title]"), ['class' => "form-control", 'placeholder' => trans('page::pages.form.meta_title')]) !!}
+                        {!! Form::text("{$lang}[meta_title]", old("$lang.meta_title"), ['class' => "form-control", 'placeholder' => trans('page::pages.form.meta_title')]) !!}
                         {!! $errors->first("{$lang}[meta_title]", '<span class="help-block">:message</span>') !!}
                     </div>
                     <div class='form-group{{ $errors->has("{$lang}[meta_description]") ? ' has-error' : '' }}'>
                         {!! Form::label("{$lang}[meta_description]", trans('page::pages.form.meta_description')) !!}
-                        <textarea class="form-control" name="{{$lang}}[meta_description]" rows="10" cols="80"></textarea>
+                        <textarea class="form-control" name="{{$lang}}[meta_description]" rows="10" cols="80">{{ old("$lang.meta_description") }}</textarea>
                         {!! $errors->first("{$lang}[meta_description]", '<span class="help-block">:message</span>') !!}
                     </div>
                 </div>
@@ -59,15 +58,15 @@
                     </div>
                     <div class='form-group{{ $errors->has("{$lang}[og_description]") ? ' has-error' : '' }}'>
                         {!! Form::label("{$lang}[og_description]", trans('page::pages.form.og_description')) !!}
-                        <textarea class="form-control" name="{{$lang}}[og_description]" rows="10" cols="80"></textarea>
+                        <textarea class="form-control" name="{{$lang}}[og_description]" rows="10" cols="80">{{ old("$lang.og_description") }}</textarea>
                         {!! $errors->first("{$lang}[og_description]", '<span class="help-block">:message</span>') !!}
                     </div>
                     <div class="form-group{{ $errors->has("{$lang}[og_type]") ? ' has-error' : '' }}">
                         <label>{{ trans('page::pages.form.og_type') }}</label>
-                        <select class="form-control">
-                            <option value="website">{{ trans('page::pages.facebook-types.website') }}</option>
-                            <option value="product">{{ trans('page::pages.facebook-types.product') }}</option>
-                            <option value="article">{{ trans('page::pages.facebook-types.article') }}</option>
+                        <select class="form-control" name="{{ $lang }}[og_type]">
+                            <option value="website" {{ old("$lang.og_type") == 'website' ? 'selected' : '' }}>{{ trans('page::pages.facebook-types.website') }}</option>
+                            <option value="product" {{ old("$lang.og_type") == 'product' ? 'selected' : '' }}>{{ trans('page::pages.facebook-types.product') }}</option>
+                            <option value="article" {{ old("$lang.og_type") == 'article' ? 'selected' : '' }}>{{ trans('page::pages.facebook-types.article') }}</option>
                         </select>
                     </div>
                 </div>
