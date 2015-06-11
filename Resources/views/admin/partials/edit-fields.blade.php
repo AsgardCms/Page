@@ -16,7 +16,7 @@
             {!! Form::label("{$lang}[body]", trans('page::pages.form.body')) !!}
             <?php $old = $page->hasTranslation($lang) ? $page->translate($lang)->body : '' ?>
             <textarea class="ckeditor" name="{{$lang}}[body]" rows="10" cols="80">
-                {!! null !== old("$lang.body") ? old("$lang.body") : $old !!}
+                {!! old("$lang.body", $old) !!}
             </textarea>
             {!! $errors->first("{$lang}.body", '<span class="help-block">:message</span>') !!}
         </div>
@@ -42,7 +42,7 @@
                     <div class='form-group{{ $errors->has("{$lang}[meta_description]") ? ' has-error' : '' }}'>
                         {!! Form::label("{$lang}[meta_description]", trans('page::pages.form.meta_description')) !!}
                         <?php $old = $page->hasTranslation($lang) ? $page->translate($lang)->meta_description : '' ?>
-                        <textarea class="form-control" name="{{$lang}}[meta_description]" rows="10" cols="80">{{ null !== old("$lang.meta_description") ? old("$lang.meta_description") : $old }}</textarea>
+                        <textarea class="form-control" name="{{$lang}}[meta_description]" rows="10" cols="80">{{ old("$lang.meta_description", $old) }}</textarea>
                         {!! $errors->first("{$lang}[meta_description]", '<span class="help-block">:message</span>') !!}
                     </div>
                 </div>
@@ -67,7 +67,7 @@
                     <div class='form-group{{ $errors->has("{$lang}[og_description]") ? ' has-error' : '' }}'>
                         {!! Form::label("{$lang}[og_description]", trans('page::pages.form.og_description')) !!}
                         <?php $old = $page->hasTranslation($lang) ? $page->translate($lang)->og_description : '' ?>
-                        <textarea class="form-control" name="{{$lang}}[og_description]" rows="10" cols="80">{{ null !== old("$lang.og_description") ? old("$lang.og_description") : $old }}</textarea>
+                        <textarea class="form-control" name="{{$lang}}[og_description]" rows="10" cols="80">{{ old("$lang.og_description", $old) }}</textarea>
                         {!! $errors->first("{$lang}[og_description]", '<span class="help-block">:message</span>') !!}
                     </div>
                     <div class="form-group{{ $errors->has("{$lang}[og_type]") ? ' has-error' : '' }}">
