@@ -3,13 +3,13 @@
         <div class='form-group{{ $errors->has("{$lang}.title") ? ' has-error' : '' }}'>
             {!! Form::label("{$lang}[title]", trans('page::pages.form.title')) !!}
             <?php $old = $page->hasTranslation($lang) ? $page->translate($lang)->title : '' ?>
-            {!! Form::text("{$lang}[title]", Input::old("{$lang}[title]", $old), ['class' => "form-control", 'placeholder' => trans('page::pages.form.title')]) !!}
+            {!! Form::text("{$lang}[title]", old("{$lang}.title", $old), ['class' => "form-control", 'placeholder' => trans('page::pages.form.title')]) !!}
             {!! $errors->first("{$lang}.title", '<span class="help-block">:message</span>') !!}
         </div>
         <div class='form-group{{ $errors->has("{$lang}[slug]") ? ' has-error' : '' }}'>
             {!! Form::label("{$lang}[slug]", trans('page::pages.form.slug')) !!}
             <?php $old = $page->hasTranslation($lang) ? $page->translate($lang)->slug : '' ?>
-            {!! Form::text("{$lang}[slug]", Input::old("{$lang}[slug]", $old), ['class' => "form-control", 'placeholder' => trans('page::pages.form.slug')]) !!}
+            {!! Form::text("{$lang}[slug]", old("{$lang}.slug", $old), ['class' => "form-control", 'placeholder' => trans('page::pages.form.slug')]) !!}
             {!! $errors->first("{$lang}.slug", '<span class="help-block">:message</span>') !!}
         </div>
         <div class='{{ $errors->has("{$lang}.body") ? ' has-error' : '' }}'>
@@ -36,7 +36,7 @@
                     <div class='form-group{{ $errors->has("{$lang}[meta_title]") ? ' has-error' : '' }}'>
                         {!! Form::label("{$lang}[meta_title]", trans('page::pages.form.meta_title')) !!}
                         <?php $old = $page->hasTranslation($lang) ? $page->translate($lang)->meta_title : '' ?>
-                        {!! Form::text("{$lang}[meta_title]", Input::old("{$lang}[meta_title]", $old), ['class' => "form-control", 'placeholder' => trans('page::pages.form.meta_title')]) !!}
+                        {!! Form::text("{$lang}[meta_title]", old("{$lang}.meta_title", $old), ['class' => "form-control", 'placeholder' => trans('page::pages.form.meta_title')]) !!}
                         {!! $errors->first("{$lang}[meta_title]", '<span class="help-block">:message</span>') !!}
                     </div>
                     <div class='form-group{{ $errors->has("{$lang}[meta_description]") ? ' has-error' : '' }}'>
@@ -61,7 +61,7 @@
                     <div class='form-group{{ $errors->has("{$lang}[og_title]") ? ' has-error' : '' }}'>
                         {!! Form::label("{$lang}[og_title]", trans('page::pages.form.og_title')) !!}
                         <?php $old = $page->hasTranslation($lang) ? $page->translate($lang)->og_title : '' ?>
-                        {!! Form::text("{$lang}[og_title]", Input::old("{$lang}[og_title]", $old), ['class' => "form-control", 'placeholder' => trans('page::pages.form.og_title')]) !!}
+                        {!! Form::text("{$lang}[og_title]", old("{$lang}.og_title", $old), ['class' => "form-control", 'placeholder' => trans('page::pages.form.og_title')]) !!}
                         {!! $errors->first("{$lang}[og_title]", '<span class="help-block">:message</span>') !!}
                     </div>
                     <div class='form-group{{ $errors->has("{$lang}[og_description]") ? ' has-error' : '' }}'>
