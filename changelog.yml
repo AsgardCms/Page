@@ -1,0 +1,6 @@
+url: https://github.com/AsgardCms/Page
+versions:
+    "1.0.1":
+        changed:
+            - Fixes AsgardCms/Platform#46 - Old input is kept in all fields
+            - Using the <code>old()</code> method helper
