@@ -1,5 +1,8 @@
 url: https://github.com/AsgardCms/Page
 versions:
+    "1.0.4":
+        changed:
+            - Fixing datatable
     "1.0.3":
         added:
             - Changing index view columns order
