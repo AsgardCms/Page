@@ -13,6 +13,7 @@ class CreatePagesTables extends Migration
     public function up()
     {
         Schema::create('page__pages', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->increments('id');
             $table->boolean('is_home')->default(0);
             $table->string('template');
@@ -20,6 +21,7 @@ class CreatePagesTables extends Migration
         });
 
         Schema::create('page__page_translations', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->increments('id');
             $table->integer('page_id')->unsigned();
             $table->string('locale')->index();
