@@ -10,7 +10,5 @@
         "Modules\\Page\\Providers\\RouteServiceProvider",
         "Modules\\Page\\Providers\\PageServiceProvider"
     ],
-    "files": [
-        "start.php"
-    ]
+    "files": []
 }
