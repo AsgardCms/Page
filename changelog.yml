@@ -1,5 +1,10 @@
 url: https://github.com/AsgardCms/Page
 versions:
+    "1.2.0":
+       changed:
+           - Use the helper functions in controller
+           - Typehint the page entity in admin controller
+           - Use manual route definition over the route resource shortcut
     "1.1.1":
        removed:
            - Removed unused loaded files
