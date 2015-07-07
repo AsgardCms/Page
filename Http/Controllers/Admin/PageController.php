@@ -1,9 +1,7 @@
 <?php namespace Modules\Page\Http\Controllers\Admin;
 
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\View;
-use Laracasts\Flash\Flash;
 use Modules\Core\Http\Controllers\Admin\AdminBaseController;
+use Modules\Page\Entities\Page;
 use Modules\Page\Http\Requests\CreatePageRequest;
 use Modules\Page\Http\Requests\UpdatePageRequest;
 use Modules\Page\Repositories\PageRepository;
@@ -26,7 +24,7 @@ class PageController extends AdminBaseController
     {
         $pages = $this->page->all();
 
-        return View::make('page::admin.index', compact('pages'));
+        return view('page::admin.index', compact('pages'));
     }
 
     /**
@@ -36,7 +34,7 @@ class PageController extends AdminBaseController
      */
     public function create()
     {
-        return View::make('page::admin.create');
+        return view('page::admin.create');
     }
 
     /**
@@ -49,53 +47,53 @@ class PageController extends AdminBaseController
     {
         $this->page->create($request->all());
 
-        Flash::success(trans('page::messages.page created'));
+        flash(trans('page::messages.page created'));
 
-        return Redirect::route('admin.page.page.index');
+        return redirect()->route('admin.page.page.index');
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  $page
+     * @param Page $page
      * @return Response
      */
-    public function edit($page)
+    public function edit(Page $page)
     {
         $this->assetPipeline->requireJs('ckeditor.js');
         $this->assetPipeline->requireCss('icheck.blue.css');
 
-        return View::make('page::admin.edit', compact('page'));
+        return view('page::admin.edit', compact('page'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param $page
+     * @param Page $page
      * @param  UpdatePageRequest $request
      * @return Response
      */
-    public function update($page, UpdatePageRequest $request)
+    public function update(Page $page, UpdatePageRequest $request)
     {
         $this->page->update($page, $request->all());
 
-        Flash::success(trans('page::messages.page updated'));
+        flash(trans('page::messages.page updated'));
 
-        return Redirect::route('admin.page.page.index');
+        return redirect()->route('admin.page.page.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  $page
+     * @param Page $page
      * @return Response
      */
-    public function destroy($page)
+    public function destroy(Page $page)
     {
         $this->page->destroy($page);
 
-        Flash::success(trans('page::messages.page deleted'));
+        flash(trans('page::messages.page deleted'));
 
-        return Redirect::route('admin.page.page.index');
+        return redirect()->route('admin.page.page.index');
     }
 }
