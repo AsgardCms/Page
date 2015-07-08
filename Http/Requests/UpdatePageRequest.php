@@ -8,7 +8,7 @@ class UpdatePageRequest extends BaseFormRequest
 
     public function rules()
     {
-        $page = $this->route()->getParameter('pages');
+        $page = $this->route('page');
 
         return [
             'template' => 'required',
