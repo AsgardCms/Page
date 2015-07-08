@@ -1,5 +1,9 @@
 url: https://github.com/AsgardCms/Page
 versions:
+    "1.2.1":
+       changed:
+           - Rename the route parameter
+           - Use the manual model binding
     "1.2.0":
        changed:
            - Use the helper functions in controller
