@@ -3,7 +3,9 @@
 use Illuminate\Routing\Router;
 
 /** @var Router $router */
-$router->model('page', 'Modules\Page\Entities\Page');
+$router->bind('page', function ($id) {
+    return app(\Modules\Page\Repositories\PageRepository::class)->find($id);
+});
 
 $router->group(['prefix' => '/page'], function () {
     get('pages', ['as' => 'admin.page.page.index', 'uses' => 'PageController@index']);
