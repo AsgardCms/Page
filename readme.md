@@ -14,14 +14,13 @@
 
 ## Installation
 
+The page module is installed by default on an AsgardCms installation. If you want to install it on standalone you can follow the steps. 
+
 ### Composer requirement
-Add package to your `require` key in the `composer.json` file:
 
 ``` json
-"asgardcms/page-module": "dev-master"
+composer require asgardcms/page-module
 ```
-
-Followed by a composer update.
 
 ### Package migrations
 
