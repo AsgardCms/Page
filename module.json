@@ -3,12 +3,14 @@
     "alias": "page",
     "description": "Managing pages.",
     "keywords": [],
-    "version": "1.4.0",
+    "version": "1.5.0",
     "active": 1,
     "order": 9999,
     "providers": [
         "Modules\\Page\\Providers\\RouteServiceProvider",
         "Modules\\Page\\Providers\\PageServiceProvider"
     ],
-    "files": []
+    "files": [
+        "composers.php"
+    ]
 }
