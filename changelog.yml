@@ -1,5 +1,8 @@
 url: https://github.com/AsgardCms/Page
 versions:
+    "1.5.0":
+        added:
+            - Added ability to select template from dropdown
     "1.4.0":
         added:
             - Spanish translations
