@@ -1,21 +1,24 @@
-<?php
-
-namespace Modules\Page\Composers;
+<?php namespace Modules\Page\Composers;
 
 use Illuminate\Contracts\View\View;
+use Illuminate\Filesystem\Filesystem;
 use Modules\Core\Foundation\Theme\ThemeManager;
 
 class TemplateViewComposer
 {
-
     /**
      * @var ThemeManager
      */
     private $themeManager;
+    /**
+     * @var Filesystem
+     */
+    private $finder;
 
-    public function __construct(ThemeManager $themeManager)
+    public function __construct(ThemeManager $themeManager, Filesystem $finder)
     {
         $this->themeManager = $themeManager;
+        $this->finder = $finder;
     }
 
     public function compose(View $view)
@@ -31,7 +34,7 @@ class TemplateViewComposer
         //This is what we will pass to the view.
         $templates = [];
 
-        foreach (\File::allFiles($path . '/views') as $template) {
+        foreach ($this->finder->allFiles($path . '/views') as $template) {
             //This is the name of the directory that contains the file.
             //It is an empty string when the file is in the root {Theme}/views directory.
             $relativePath = $template->getRelativePath();
