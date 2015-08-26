@@ -1,13 +1,10 @@
 url: https://github.com/AsgardCms/Page
 versions:
-    "1.6.0":
-        added:
-            - Dutch and Portuguese language
-        changed:
-            - Making the template selection a dropdown instead of an input
     "1.5.0":
         added:
-            - Added ability to select template from dropdown
+            - Dutch and Portuguese language
+        added:
+            - Making the template selection a dropdown instead of an input
     "1.4.0":
         added:
             - Spanish translations
