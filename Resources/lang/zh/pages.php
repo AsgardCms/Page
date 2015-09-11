@@ -37,6 +37,6 @@ return [
         'article' => '文章',
     ],
     'navigation' => [
-        'back to index' => '返回到页面列表'
-    ]
+        'back to index' => '返回到页面列表',
+    ],
 ];
