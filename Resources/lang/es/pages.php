@@ -37,11 +37,6 @@ return [
         'article' => 'Artículo',
     ],
     'navigation' => [
-<<<<<<< HEAD
-        'back to index' => 'Volver a la lista de páginas',
-    ],
-=======
         'back to index' => 'Volver a la lista de páginas'
-    ]
->>>>>>> AsgardCms/develop
+    ],
 ];
