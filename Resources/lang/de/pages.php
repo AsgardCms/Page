@@ -37,6 +37,6 @@ return [
         'article' => 'Artikle',
     ],
     'navigation' => [
-        'back to index' => 'Zurück zum Seiten Index'
-    ]
+        'back to index' => 'Zurück zum Seiten Index',
+    ],
 ];
