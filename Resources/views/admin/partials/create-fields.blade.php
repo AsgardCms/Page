@@ -22,7 +22,7 @@
             <div class="box-header">
                 <h4 class="box-title">
                     <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo-{{$lang}}">
-                        Meta data
+                        {{ trans('page::pages.form.meta_data') }}
                     </a>
                 </h4>
             </div>
@@ -45,7 +45,7 @@
             <div class="box-header">
                 <h4 class="box-title">
                     <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFacebook-{{$lang}}">
-                        Facebook data
+                        {{ trans('page::pages.form.facebook_data') }}
                     </a>
                 </h4>
             </div>
