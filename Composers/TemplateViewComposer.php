@@ -39,13 +39,15 @@ class TemplateViewComposer
                 continue;
             }
 
+            $templateName = $this->getTemplateName($template);
             $file = $this->removeExtensionsFromFilename($template);
 
             if ($this->hasSubdirectory($relativePath)) {
-                $templates[$relativePath . '.' . $file] = $relativePath . '/' . $file;
+                $templates[$relativePath . '.' . $file] = $templateName;
             } else {
-                $templates[$file] = $file;
+                $templates[$file] = $templateName;
             }
+
         }
 
         return $templates;
@@ -58,6 +60,23 @@ class TemplateViewComposer
     private function getCurrentThemeBasePath()
     {
         return $this->themeManager->find(setting('core::template'))->getPath();
+    }
+
+    /**
+     * Read template name defined in comments
+     * @param $template
+     * @return string
+     */
+    private function getTemplateName($template)
+    {
+        $f = fopen($template, 'r');
+        $firstLine = fgets($f);
+        fclose($f);
+        preg_match("/{{-- Template: (.*) --}}/", $firstLine, $result);
+        if(count($result)>1) {
+            return $result[1];
+        }
+        return $this->removeExtensionsFromFilename($template);
     }
 
     /**
