@@ -21,22 +21,22 @@ return [
         'og_title' => 'Facebook Titel',
         'og_description' => 'Facebook Beschreibung',
         'og_type' => 'Facebook typ',
-        'template' => 'Page Vorlagnamen',
-        'is homepage' => 'Startseite ?',
-        'body' => 'Körper',
+        'template' => 'Seitenvorlage',
+        'is homepage' => 'Startseite?',
+        'body' => 'Inhalt',
     ],
     'validation' => [
         'attributes' => [
             'title' => 'titel',
-            'body' => 'körper',
+            'body' => 'inhalt',
         ],
     ],
     'facebook-types' => [
         'website' => 'Website',
         'product' => 'Produkt',
-        'article' => 'Artikle',
+        'article' => 'Artikel',
     ],
     'navigation' => [
-        'back to index' => 'Zurück zum Seiten Index',
-    ],
+        'back to index' => 'Zurück zum Seitenindex'
+    ]
 ];
