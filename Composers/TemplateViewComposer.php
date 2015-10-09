@@ -73,7 +73,7 @@ class TemplateViewComposer
         $firstLine = fgets($f);
         fclose($f);
         preg_match("/{{-- Template: (.*) --}}/", $firstLine, $result);
-        if(count($result)>1) {
+        if (count($result)>1) {
             return $result[1];
         }
         return $this->removeExtensionsFromFilename($template);
