@@ -69,12 +69,9 @@ class TemplateViewComposer
      */
     private function getTemplateName($template)
     {
-        $f = fopen($template, 'r');
-        $firstLine = fgets($f);
-        fclose($f);
-        preg_match("/{{-- Template: (.*) --}}/", $firstLine, $result);
-        if (count($result)>1) {
-            return $result[1];
+        preg_match("/{{-- Template: (.*) --}}/", $template->getContents(), $templateName);
+        if (count($templateName)>1) {
+            return $templateName[1];
         }
         return $this->removeExtensionsFromFilename($template);
     }
