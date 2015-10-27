@@ -5,8 +5,6 @@ versions:
             - Added naming templates feature
             - Added Polish translations
             - Added Russian translations
-        changed:
-            - Improving german translations
     "1.5.0":
         added:
             - Dutch and Portuguese language
