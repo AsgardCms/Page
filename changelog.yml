@@ -1,5 +1,12 @@
 url: https://github.com/AsgardCms/Page
 versions:
+    "1.6.0":
+        added:
+            - Added naming templates feature
+            - Added Polish translations
+            - Added Russian translations
+        changed:
+            - Improving german translations
     "1.5.0":
         added:
             - Dutch and Portuguese language
