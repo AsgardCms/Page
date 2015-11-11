@@ -6,6 +6,7 @@ use Modules\Core\Foundation\Theme\ThemeManager;
 
 class TemplateViewComposer
 {
+
     /**
      * @var ThemeManager
      */
@@ -43,7 +44,7 @@ class TemplateViewComposer
             $file = $this->removeExtensionsFromFilename($template);
 
             if ($this->hasSubdirectory($relativePath)) {
-                $templates[$relativePath . '.' . $file] = $templateName;
+                $templates[str_replace('/', '.', $relativePath) . '.' . $file] = $templateName;
             } else {
                 $templates[$file] = $templateName;
             }
@@ -54,7 +55,8 @@ class TemplateViewComposer
     }
 
     /**
-     * Get the base path of the current theme
+     * Get the base path of the current theme.
+     *
      * @return string
      */
     private function getCurrentThemeBasePath()
@@ -63,22 +65,43 @@ class TemplateViewComposer
     }
 
     /**
-     * Read template name defined in comments
+     * Read template name defined in comments.
+     *
      * @param $template
+     *
      * @return string
      */
     private function getTemplateName($template)
     {
         preg_match("/{{-- Template: (.*) --}}/", $template->getContents(), $templateName);
-        if (count($templateName)>1) {
+
+        if (count($templateName) > 1) {
             return $templateName[1];
         }
-        return $this->removeExtensionsFromFilename($template);
+
+        return $this->getDefaultTemplateName($template);
     }
 
     /**
-     * Check if the given path is a layout or a partial
+     * If the template name is not defined in comments, build a default.
+     *
+     * @param $template
+     *
+     * @return mixed
+     */
+    private function getDefaultTemplateName($template)
+    {
+        $relativePath = $template->getRelativePath();
+        $fileName = $this->removeExtensionsFromFilename($template);
+
+        return $this->hasSubdirectory($relativePath) ? $relativePath . '/' . $fileName : $fileName;
+    }
+
+    /**
+     * Check if the given path is a layout or a partial.
+     *
      * @param string $relativePath
+     *
      * @return bool
      */
     private function isLayoutOrPartial($relativePath)
@@ -87,8 +110,10 @@ class TemplateViewComposer
     }
 
     /**
-     * Remove the extension from the filename
+     * Remove the extension from the filename.
+     *
      * @param $template
+     *
      * @return mixed
      */
     private function removeExtensionsFromFilename($template)
@@ -97,12 +122,15 @@ class TemplateViewComposer
     }
 
     /**
-     * Check if the relative path is not empty (meaning the template is in a directory),
+     * Check if the relative path is not empty (meaning the template is in a directory).
+     *
      * @param $relativePath
+     *
      * @return bool
      */
     private function hasSubdirectory($relativePath)
     {
         return ! empty($relativePath);
     }
+
 }
