@@ -1,5 +1,8 @@
 url: https://github.com/AsgardCms/Page
 versions:
+    "1.7.0":
+        changed:
+            - Fix template selector if its name is not defined in the file.
     "1.6.0":
         added:
             - Added naming templates feature
