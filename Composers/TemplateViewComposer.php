@@ -6,7 +6,6 @@ use Modules\Core\Foundation\Theme\ThemeManager;
 
 class TemplateViewComposer
 {
-
     /**
      * @var ThemeManager
      */
@@ -48,7 +47,6 @@ class TemplateViewComposer
             } else {
                 $templates[$file] = $templateName;
             }
-
         }
 
         return $templates;
@@ -132,5 +130,4 @@ class TemplateViewComposer
     {
         return ! empty($relativePath);
     }
-
 }
