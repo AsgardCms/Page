@@ -1,5 +1,8 @@
 url: https://github.com/AsgardCms/Page
 versions:
+    "1.8.1":
+        changed:
+            - Fixed issue with updating pages and triggering event
     "1.8.0":
         changed:
             - Added data attributes for automatic slug creation
