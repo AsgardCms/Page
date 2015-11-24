@@ -45,10 +45,10 @@ class EloquentPageRepository extends EloquentBaseRepository implements PageRepos
      */
     public function update($model, $data)
     {
-        $page = $model->update($data);
+        $model->update($data);
 
-        event(new PageWasUpdated($page->id, $data));
+        event(new PageWasUpdated($model->id, $data));
 
-        return $page;
+        return $model;
     }
 }
