@@ -1,5 +1,9 @@
 url: https://github.com/AsgardCms/Page
 versions:
+    "1.9.0":
+        changed:
+            - Using the new data attribute to disable sorting from datatables
+            - Removing the duplicate confirm delete modal
     "1.8.1":
         changed:
             - Fixed issue with updating pages and triggering event
