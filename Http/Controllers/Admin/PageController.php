@@ -18,6 +18,7 @@ class PageController extends AdminBaseController
         parent::__construct();
 
         $this->page = $page;
+        $this->assetPipeline->requireCss('icheck.blue.css');
     }
 
     public function index()

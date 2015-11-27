@@ -13,7 +13,6 @@
 
 @section('styles')
     {!! Theme::script('js/vendor/ckeditor/ckeditor.js') !!}
-    {!! Theme::style('css/vendor/iCheck/flat/blue.css') !!}
     <style>
         .checkbox label {
             padding-left: 0;
