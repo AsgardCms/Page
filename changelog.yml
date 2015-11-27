@@ -5,6 +5,7 @@ versions:
             - Using the new data attribute to disable sorting from datatables
             - Removing the duplicate confirm delete modal
             - Requiring iCheck from the asset pipeline
+            - Missing slug class was added on the slug input for automatic slug generation
     "1.8.1":
         changed:
             - Fixed issue with updating pages and triggering event
