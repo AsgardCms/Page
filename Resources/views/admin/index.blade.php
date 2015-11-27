@@ -61,8 +61,8 @@
                             </td>
                             <td>
                                 <div class="btn-group">
-                                    <a href="{{ URL::route('admin.page.page.edit', [$page->id]) }}" class="btn btn-default btn-flat"><i class="glyphicon glyphicon-pencil"></i></a>
-                                    <button data-toggle="modal" data-target="#modal-delete-confirmation" data-action-target="{{ route('admin.page.page.destroy', [$page->id]) }}" class="btn btn-danger btn-flat"><i class="glyphicon glyphicon-trash"></i></button>
+                                    <a href="{{ URL::route('admin.page.page.edit', [$page->id]) }}" class="btn btn-default btn-flat"><i class="fa fa-pencil"></i></a>
+                                    <button data-toggle="modal" data-target="#modal-delete-confirmation" data-action-target="{{ route('admin.page.page.destroy', [$page->id]) }}" class="btn btn-danger btn-flat"><i class="fa fa-trash"></i></button>
                                 </div>
                             </td>
                         </tr>
