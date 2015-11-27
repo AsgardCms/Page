@@ -3,6 +3,7 @@ versions:
     "1.10.0":
         changed:
             - Using the delete modal partial
+            - Using font awesome icons on index
     "1.9.0":
         changed:
             - Using the new data attribute to disable sorting from datatables
