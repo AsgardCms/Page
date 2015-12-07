@@ -1,5 +1,8 @@
 url: https://github.com/AsgardCms/Page
 versions:
+    "1.11.0":
+        changed:
+            - Removed language files, they are now in the translation module
     "1.10.0":
         changed:
             - Using the delete modal partial
