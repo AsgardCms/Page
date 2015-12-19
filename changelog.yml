@@ -1,5 +1,8 @@
 url: https://github.com/AsgardCms/Page
 versions:
+    "1.12.0":
+        added:
+            - Adding ability to add additional fields to the pages module
     "1.11.0":
         changed:
             - Removed language files, they are now in the translation module
