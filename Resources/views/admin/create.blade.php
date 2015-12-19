@@ -34,6 +34,11 @@
                         @include('page::admin.partials.create-fields', ['lang' => $locale])
                     </div>
                     <?php endforeach; ?>
+                    <?php if (config('asgard.page.config.partials.normal.create') !== []): ?>
+                        <?php foreach (config('asgard.page.config.partials.normal.create') as $partial): ?>
+                            @include($partial)
+                        <?php endforeach; ?>
+                    <?php endif; ?>
 
                     <div class="box-footer">
                         <button type="submit" class="btn btn-primary btn-flat">{{ trans('core::core.button.create') }}</button>

@@ -15,6 +15,11 @@
             <textarea class="ckeditor" name="{{$lang}}[body]" rows="10" cols="80">{{ old("{$lang}.body") }}</textarea>
             {!! $errors->first("{$lang}.body", '<span class="help-block">:message</span>') !!}
         </div>
+        <?php if (config('asgard.page.config.partials.translatable.create') !== []): ?>
+            <?php foreach (config('asgard.page.config.partials.translatable.create') as $partial): ?>
+                @include($partial)
+            <?php endforeach; ?>
+        <?php endif; ?>
     </div>
     <div class="box-group" id="accordion">
         <!-- we are adding the .panel class so bootstrap.js collapse plugin detects it -->
