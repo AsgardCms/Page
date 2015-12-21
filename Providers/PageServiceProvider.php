@@ -25,6 +25,12 @@ class PageServiceProvider extends ServiceProvider
         $this->registerBindings();
     }
 
+    public function boot()
+    {
+        $this->mergeConfigFrom(__DIR__ . '/../Config/config.php', 'asgard.page.config');
+        $this->publishes([__DIR__ . '/../Config/config.php' => config_path('asgard.page.config' . '.php'), ], 'config');
+    }
+
     /**
      * Get the services provided by the provider.
      *
