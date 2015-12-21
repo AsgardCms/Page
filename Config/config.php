@@ -18,4 +18,15 @@ return [
             'edit' => [],
         ],
     ],
+    /*
+    |--------------------------------------------------------------------------
+    | Dynamic relations
+    |--------------------------------------------------------------------------
+    | Add relations that will be dynamically added to the Page entity
+    */
+    'relations' => [
+//        'extension' => function ($self) {
+//            return $self->belongsTo(PageExtension::class, 'id', 'page_id')->first();
+//        }
+    ],
 ];
