@@ -1,6 +1,7 @@
 <?php namespace Modules\Page\Http\Controllers;
 
 use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Http\Request;
 use Modules\Core\Http\Controllers\BasePublicController;
 use Modules\Page\Repositories\PageRepository;
 
@@ -28,7 +29,16 @@ class PublicController extends BasePublicController
      */
     public function uri($slug)
     {
-        $page = $this->page->findBySlug($slug);
+        $locale = \App::getLocale();
+
+        $menuItem = $this->app->make('Modules\Menu\Repositories\MenuItemRepository')
+            ->findByUriInLanguage($slug, $locale);
+
+        if($menuItem){
+            $page = $this->page->find($menuItem->page_id);
+        }else{
+            $page = $this->page->findBySlug($slug);
+        }
 
         $this->throw404IfNotFound($page);
 
