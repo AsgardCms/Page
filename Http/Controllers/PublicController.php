@@ -1,7 +1,6 @@
 <?php namespace Modules\Page\Http\Controllers;
 
 use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Http\Request;
 use Modules\Core\Http\Controllers\BasePublicController;
 use Modules\Page\Repositories\PageRepository;
 
