@@ -33,9 +33,9 @@ class PublicController extends BasePublicController
         $menuItem = $this->app->make('Modules\Menu\Repositories\MenuItemRepository')
             ->findByUriInLanguage($slug, $locale);
 
-        if($menuItem){
+        if ($menuItem) {
             $page = $this->page->find($menuItem->page_id);
-        }else{
+        } else {
             $page = $this->page->findBySlug($slug);
         }
 
