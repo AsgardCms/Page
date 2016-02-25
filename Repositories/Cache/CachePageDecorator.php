@@ -47,4 +47,20 @@ class CachePageDecorator extends BaseCacheDecorator implements PageRepository
                 }
             );
     }
+
+    /**
+     * @param $slug
+     * @param $locale
+     * @return object
+     */
+    public function findBySlugInLocale($slug, $locale)
+    {
+        return $this->cache
+            ->tags($this->entityName, 'global')
+            ->remember("{$this->locale}.{$this->entityName}.findBySlugInLocale.{$slug}.{$locale}", $this->cacheTime,
+                function () use ($slug, $locale) {
+                    return $this->repository->findBySlugInLocale($slug, $locale);
+                }
+            );
+    }
 }
