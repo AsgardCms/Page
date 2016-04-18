@@ -12,7 +12,6 @@
 @stop
 
 @section('styles')
-    {!! Theme::script('js/vendor/ckeditor/ckeditor.js') !!}
     <style>
         .checkbox label {
             padding-left: 0;
@@ -88,16 +87,6 @@
 @stop
 
 @section('scripts')
-    <script type="text/javascript">
-        $(function() {
-           /* CKEDITOR.replaceAll(function( textarea, config ) {
-                if (!$(textarea).hasClass('ckeditor')) {
-                    return false;
-                }
-                config.language = '<?php echo App::getLocale() ?>';
-            } );*/
-        });
-    </script>
     <script>
         $( document ).ready(function() {
             $(document).keypressAction({
