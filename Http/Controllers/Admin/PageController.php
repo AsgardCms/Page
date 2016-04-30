@@ -80,7 +80,11 @@ class PageController extends AdminBaseController
 
         flash(trans('page::messages.page updated'));
 
-        return redirect()->route('admin.page.page.index');
+        if ($request->get('button') == 'index') {
+            return redirect()->route('admin.block.block.index');
+        }
+
+        return redirect()->back();
     }
 
     /**
