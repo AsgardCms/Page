@@ -1,5 +1,6 @@
 <?php namespace Modules\Page\Repositories\Eloquent;
 
+use Illuminate\Database\Eloquent\Builder;
 use Modules\Core\Repositories\Eloquent\EloquentBaseRepository;
 use Modules\Page\Events\PageWasCreated;
 use Modules\Page\Events\PageWasUpdated;
@@ -50,5 +51,22 @@ class EloquentPageRepository extends EloquentBaseRepository implements PageRepos
         event(new PageWasUpdated($model->id, $data));
 
         return $model;
+    }
+
+    /**
+     * @param $slug
+     * @param $locale
+     * @return object
+     */
+    public function findBySlugInLocale($slug, $locale)
+    {
+        if (method_exists($this->model, 'translations')) {
+            return $this->model->whereHas('translations', function (Builder $q) use ($slug, $locale) {
+                $q->where('slug', $slug);
+                $q->where('locale', $locale);
+            })->with('translations')->first();
+        }
+
+        return $this->model->where('slug', $slug)->where('locale', $locale)->first();
     }
 }
