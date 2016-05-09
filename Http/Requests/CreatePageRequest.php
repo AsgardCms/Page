@@ -10,7 +10,6 @@ class CreatePageRequest extends BaseFormRequest
     {
         return [
             'template' => 'required',
-            'is_home' => 'unique:page__pages',
         ];
     }
 
