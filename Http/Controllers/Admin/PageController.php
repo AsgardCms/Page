@@ -35,6 +35,8 @@ class PageController extends AdminBaseController
      */
     public function create()
     {
+        $this->assetPipeline->requireJs('ckeditor.js');
+        
         return view('page::admin.create');
     }
 
