@@ -51,6 +51,7 @@
             <div class="box box-primary">
                 <div class="box-body">
                     <div class="checkbox{{ $errors->has('is_home') ? ' has-error' : '' }}">
+                        <input type="hidden" name="is_home" value="0">
                         <label for="is_home">
                             <input id="is_home"
                                    name="is_home"
@@ -96,16 +97,6 @@
             $('input[type="checkbox"].flat-blue, input[type="radio"].flat-blue').iCheck({
                 checkboxClass: 'icheckbox_flat-blue',
                 radioClass: 'iradio_flat-blue'
-            });
-
-            $('input[type="checkbox"]').on('ifChecked', function(){
-                $(this).parent().find('input[type=hidden]').remove();
-            });
-
-            $('input[type="checkbox"]').on('ifUnchecked', function(){
-                var name = $(this).attr('name'),
-                    input = '<input type="hidden" name="' + name + '" value="0" />';
-                $(this).parent().append(input);
             });
         });
     </script>
