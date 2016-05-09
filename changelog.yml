@@ -1,5 +1,8 @@
 url: https://github.com/AsgardCms/Page
 versions:
+    "1.13.1":
+        changed:
+            - Load ckeditor using the assetPipeline
     "1.13.0":
         changed:
             - Resolved path problem for different locales
