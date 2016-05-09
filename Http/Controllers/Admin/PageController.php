@@ -36,7 +36,7 @@ class PageController extends AdminBaseController
     public function create()
     {
         $this->assetPipeline->requireJs('ckeditor.js');
-        
+
         return view('page::admin.create');
     }
 
@@ -64,7 +64,6 @@ class PageController extends AdminBaseController
     public function edit(Page $page)
     {
         $this->assetPipeline->requireJs('ckeditor.js');
-        $this->assetPipeline->requireCss('icheck.blue.css');
 
         return view('page::admin.edit', compact('page'));
     }
