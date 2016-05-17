@@ -12,6 +12,11 @@
 [![Slack](http://slack.asgardcms.com/badge.svg)](http://slack.asgardcms.com/)
 
 
+| Branch | Travis-ci |
+| ---------------- | --------------- |
+| master  | [![Build Status](https://travis-ci.org/AsgardCms/Page.svg?branch=master)](https://travis-ci.org/AsgardCms/Page)  |
+
+
 ## Installation
 
 The page module is installed by default on an AsgardCms installation. If you want to install it on standalone you can follow the steps. 
