@@ -16,7 +16,7 @@ abstract class BasePageTest extends TestCase
     /**
      * @var PageRepository
      */
-    private $page;
+    protected $page;
 
     public function setUp()
     {
