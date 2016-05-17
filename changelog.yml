@@ -1,5 +1,8 @@
 url: https://github.com/AsgardCms/Page
 versions:
+    "1.15.0":
+        added:
+            - Ability to add middleware on the front end routes
     "1.14.0":
         changed:
             - Fix ability to uncheck is_home checkbox
