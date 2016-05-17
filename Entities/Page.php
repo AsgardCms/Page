@@ -37,6 +37,9 @@ class Page extends Model
         'og_image',
         'og_type',
     ];
+    protected $casts = [
+        'is_home' => 'boolean',
+    ];
 
     public function __call($method, $parameters)
     {
