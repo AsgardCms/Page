@@ -1,4 +1,4 @@
-Alanguage: php
+language: php
 
 php:
   - 7
