@@ -15,4 +15,11 @@ interface PageRepository extends BaseRepository
      * @return int
      */
     public function countAll();
+
+    /**
+     * @param $slug
+     * @param $locale
+     * @return object
+     */
+    public function findBySlugInLocale($slug, $locale);
 }

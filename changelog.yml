@@ -1,7 +1,21 @@
 url: https://github.com/AsgardCms/Page
 versions:
+    "1.15.0":
+        added:
+            - Ability to add middleware on the front end routes
+    "1.14.0":
+        changed:
+            - Fix ability to uncheck is_home checkbox
+            - Is home checkbox unique rule has been removed, instead other homepage will now be unchecked
+    "1.13.1":
+        changed:
+            - Load ckeditor using the assetPipeline
+    "1.13.0":
+        changed:
+            - Resolved path problem for different locales
     "1.12.1":
-        - Adding dynamic relations on the Page entity
+        added:
+            - Adding dynamic relations on the Page entity
     "1.12.0":
         added:
             - Adding ability to add additional fields to the pages module

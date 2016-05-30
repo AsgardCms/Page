@@ -8,11 +8,8 @@ class UpdatePageRequest extends BaseFormRequest
 
     public function rules()
     {
-        $page = $this->route()->getParameter('page');
-
         return [
             'template' => 'required',
-            'is_home' => "unique:page__pages,is_home,{$page->id}",
         ];
     }
 

@@ -29,4 +29,10 @@ return [
 //            return $self->belongsTo(PageExtension::class, 'id', 'page_id')->first();
 //        }
     ],
+    /*
+    |--------------------------------------------------------------------------
+    | Array of middleware that will be applied on the page module front end routes
+    |--------------------------------------------------------------------------
+    */
+    'middleware' => [],
 ];
