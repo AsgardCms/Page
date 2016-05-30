@@ -5,6 +5,8 @@ use Modules\Page\Entities\Page;
 use Modules\Page\Http\Requests\CreatePageRequest;
 use Modules\Page\Http\Requests\UpdatePageRequest;
 use Modules\Page\Repositories\PageRepository;
+use Modules\Page\Events\PageWasDeleted;
+
 
 class PageController extends AdminBaseController
 {
@@ -82,11 +84,7 @@ class PageController extends AdminBaseController
         flash(trans('page::messages.page updated'));
 
         if ($request->get('button') === 'index') {
-<<<<<<< HEAD
-            return redirect()->route('admin.block.block.index');
-=======
             return redirect()->route('admin.page.page.index');
->>>>>>> AsgardCms/master
         }
 
         return redirect()->back();
@@ -101,6 +99,8 @@ class PageController extends AdminBaseController
     public function destroy(Page $page)
     {
         $this->page->destroy($page);
+
+        event(new PageWasDeleted($page));
 
         flash(trans('page::messages.page deleted'));
 
