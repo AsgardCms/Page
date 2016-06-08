@@ -3,6 +3,8 @@ versions:
     "1.15.0":
         added:
             - Ability to add middleware on the front end routes
+        changed:
+            - Use <code>$router</code> variable in routes file
     "1.14.0":
         changed:
             - Fix ability to uncheck is_home checkbox
