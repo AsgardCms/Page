@@ -99,8 +99,6 @@ class PageController extends AdminBaseController
     {
         $this->page->destroy($page);
 
-        event(new PageWasDeleted($page));
-
         flash(trans('page::messages.page deleted'));
 
         return redirect()->route('admin.page.page.index');
