@@ -1,5 +1,8 @@
 url: https://github.com/AsgardCms/Page
 versions:
+    "1.15.1":
+        changed:
+            - Fixing issue where saving the homepage would remove the is_home status on it
     "1.15.0":
         added:
             - Ability to add middleware on the front end routes
