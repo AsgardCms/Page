@@ -51,7 +51,7 @@ class EloquentPageRepository extends EloquentBaseRepository implements PageRepos
     public function update($model, $data)
     {
         if (array_get($data, 'is_home') === '1') {
-            $this->removeOtherHomepage();
+            $this->removeOtherHomepage($model->id);
         }
         $model->update($data);
 
@@ -86,13 +86,18 @@ class EloquentPageRepository extends EloquentBaseRepository implements PageRepos
 
     /**
      * Set the current page set as homepage to 0
+     * @param null $pageId
      */
-    private function removeOtherHomepage()
+    private function removeOtherHomepage($pageId = null)
     {
         $homepage = $this->findHomepage();
         if ($homepage === null) {
             return;
         }
+        if ($pageId === $homepage->id) {
+            return;
+        }
+
         $homepage->is_home = 0;
         $homepage->save();
     }
