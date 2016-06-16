@@ -22,7 +22,7 @@
   "require": {
     "php": ">=5.4",
     "composer/installers": "~1.0",
-    "asgardcms/core-module": "~1.0",
+    "asgardcms/core-module": "~2.0",
     "dimsav/laravel-translatable": "~5.0"
   },
   "require-dev": {
