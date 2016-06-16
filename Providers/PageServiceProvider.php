@@ -2,12 +2,14 @@
 
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\ServiceProvider;
+use Modules\Core\Traits\CanPublishConfiguration;
 use Modules\Page\Entities\Page;
 use Modules\Page\Repositories\Cache\CachePageDecorator;
 use Modules\Page\Repositories\Eloquent\EloquentPageRepository;
 
 class PageServiceProvider extends ServiceProvider
 {
+    use CanPublishConfiguration;
     /**
      * Indicates if loading of the provider is deferred.
      *
@@ -27,8 +29,8 @@ class PageServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        $this->mergeConfigFrom(__DIR__ . '/../Config/config.php', 'asgard.page.config');
-        $this->publishes([__DIR__ . '/../Config/config.php' => config_path('asgard.page.config' . '.php'), ], 'config');
+        $this->publishConfig('page', 'config');
+        $this->publishConfig('page', 'permissions');
     }
 
     /**
