@@ -41,6 +41,11 @@
       "Modules\\": "Modules/"
     }
   },
+  "extra": {
+    "branch-alias": {
+      "2.0": "2.0.x-dev"
+    }
+  },
   "minimum-stability": "dev",
   "prefer-stable": true
 }
