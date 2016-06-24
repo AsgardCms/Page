@@ -1,5 +1,10 @@
 url: https://github.com/AsgardCms/Page
 versions:
+    "2.0@unreleased":
+        added:
+            - Laravel 5.2 compatibility
+        changed:
+            - Using new more flexible way of handle permissions via middleware
     "1.15.1":
         changed:
             - Fixing issue where saving the homepage would remove the is_home status on it
