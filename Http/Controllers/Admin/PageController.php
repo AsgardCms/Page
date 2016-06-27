@@ -51,9 +51,8 @@ class PageController extends AdminBaseController
     {
         $this->page->create($request->all());
 
-        flash(trans('page::messages.page created'));
-
-        return redirect()->route('admin.page.page.index');
+        return redirect()->route('admin.page.page.index')
+            ->withSuccess(trans('page::messages.page created'));
     }
 
     /**
@@ -80,13 +79,13 @@ class PageController extends AdminBaseController
     {
         $this->page->update($page, $request->all());
 
-        flash(trans('page::messages.page updated'));
-
         if ($request->get('button') === 'index') {
-            return redirect()->route('admin.page.page.index');
+            return redirect()->route('admin.page.page.index')
+                ->withSuccess(trans('page::messages.page updated'));
         }
 
-        return redirect()->back();
+        return redirect()->back()
+            ->withSuccess(trans('page::messages.page updated'));
     }
 
     /**
@@ -99,8 +98,7 @@ class PageController extends AdminBaseController
     {
         $this->page->destroy($page);
 
-        flash(trans('page::messages.page deleted'));
-
-        return redirect()->route('admin.page.page.index');
+        return redirect()->route('admin.page.page.index')
+            ->withSuccess(trans('page::messages.page deleted'));
     }
 }

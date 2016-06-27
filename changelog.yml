@@ -5,6 +5,8 @@ versions:
             - Laravel 5.2 compatibility
         changed:
             - Using new more flexible way of handle permissions via middleware
+        removed:
+            - Removing laracasts/flash dependency
     "1.15.1":
         changed:
             - Fixing issue where saving the homepage would remove the is_home status on it
