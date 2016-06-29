@@ -8,7 +8,7 @@ use Modules\Core\Providers\CoreServiceProvider;
 use Modules\Page\Providers\PageServiceProvider;
 use Modules\Page\Repositories\PageRepository;
 use Orchestra\Testbench\TestCase;
-use Pingpong\Modules\ModulesServiceProvider;
+use Nwidart\Modules\LaravelModulesServiceProvider;
 use Illuminate\Contracts\Console\Kernel;
 
 abstract class BasePageTest extends TestCase
@@ -30,7 +30,7 @@ abstract class BasePageTest extends TestCase
     protected function getPackageProviders($app)
     {
         return [
-            ModulesServiceProvider::class,
+            LaravelModulesServiceProvider::class,
             CoreServiceProvider::class,
             PageServiceProvider::class,
             LaravelLocalizationServiceProvider::class,
