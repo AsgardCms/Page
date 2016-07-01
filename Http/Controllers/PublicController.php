@@ -1,4 +1,6 @@
-<?php namespace Modules\Page\Http\Controllers;
+<?php
+
+namespace Modules\Page\Http\Controllers;
 
 use Illuminate\Contracts\Foundation\Application;
 use Modules\Core\Http\Controllers\BasePublicController;

@@ -1,5 +1,8 @@
-<?php namespace Modules\Page\Tests;
+<?php
 
+namespace Modules\Page\Tests;
+
+use Illuminate\Contracts\Console\Kernel;
 use Illuminate\Database\Eloquent\Model;
 use Maatwebsite\Sidebar\SidebarServiceProvider;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -7,9 +10,8 @@ use Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider;
 use Modules\Core\Providers\CoreServiceProvider;
 use Modules\Page\Providers\PageServiceProvider;
 use Modules\Page\Repositories\PageRepository;
-use Orchestra\Testbench\TestCase;
 use Nwidart\Modules\LaravelModulesServiceProvider;
-use Illuminate\Contracts\Console\Kernel;
+use Orchestra\Testbench\TestCase;
 
 abstract class BasePageTest extends TestCase
 {

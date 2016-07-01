@@ -1,4 +1,6 @@
-<?php namespace Modules\Page\Events;
+<?php
+
+namespace Modules\Page\Events;
 
 class PageWasUpdated
 {

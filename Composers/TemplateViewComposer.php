@@ -1,4 +1,6 @@
-<?php namespace Modules\Page\Composers;
+<?php
+
+namespace Modules\Page\Composers;
 
 use Illuminate\Contracts\View\View;
 use Illuminate\Filesystem\Filesystem;

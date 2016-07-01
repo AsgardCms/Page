@@ -1,4 +1,6 @@
-<?php namespace Modules\Page\Tests;
+<?php
+
+namespace Modules\Page\Tests;
 
 class PagesTest extends BasePageTest
 {

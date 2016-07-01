@@ -1,4 +1,6 @@
-<?php namespace Modules\Page\Providers;
+<?php
+
+namespace Modules\Page\Providers;
 
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\ServiceProvider;
