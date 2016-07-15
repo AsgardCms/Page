@@ -8,6 +8,7 @@ use Modules\Core\Traits\CanPublishConfiguration;
 use Modules\Page\Entities\Page;
 use Modules\Page\Repositories\Cache\CachePageDecorator;
 use Modules\Page\Repositories\Eloquent\EloquentPageRepository;
+use Modules\Tag\Repositories\TagManager;
 
 class PageServiceProvider extends ServiceProvider
 {
@@ -33,6 +34,8 @@ class PageServiceProvider extends ServiceProvider
     {
         $this->publishConfig('page', 'config');
         $this->publishConfig('page', 'permissions');
+
+        $this->app[TagManager::class]->registerNamespace(new Page());
     }
 
     /**

@@ -4,10 +4,13 @@ namespace Modules\Page\Entities;
 
 use Dimsav\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Model;
+use Modules\Tag\Contracts\TaggableInterface;
+use Modules\Tag\Traits\NamespacedEntity;
+use Modules\Tag\Traits\TaggableTrait;
 
-class Page extends Model
+class Page extends Model implements TaggableInterface
 {
-    use Translatable;
+    use Translatable, TaggableTrait, NamespacedEntity;
 
     protected $table = 'page__pages';
     public $translatedAttributes = [
@@ -42,6 +45,7 @@ class Page extends Model
     protected $casts = [
         'is_home' => 'boolean',
     ];
+    protected static $entityNamespace = 'asgardcms/page';
 
     public function __call($method, $parameters)
     {

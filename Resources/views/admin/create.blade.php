@@ -68,6 +68,8 @@
                         {!! Form::select("template", $all_templates, old("template", 'default'), ['class' => "form-control", 'placeholder' => trans('page::pages.form.template')]) !!}
                         {!! $errors->first("template", '<span class="help-block">:message</span>') !!}
                     </div>
+                    <hr>
+                    @tags('asgardcms/page')
                 </div>
             </div>
         </div>

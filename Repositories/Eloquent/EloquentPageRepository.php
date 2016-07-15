@@ -42,6 +42,8 @@ class EloquentPageRepository extends EloquentBaseRepository implements PageRepos
 
         event(new PageWasCreated($page->id, $data));
 
+        $page->setTags(array_get($data, 'tags'));
+
         return $page;
     }
 
@@ -58,6 +60,8 @@ class EloquentPageRepository extends EloquentBaseRepository implements PageRepos
         $model->update($data);
 
         event(new PageWasUpdated($model->id, $data));
+
+        $model->setTags(array_get($data, 'tags'));
 
         return $model;
     }
