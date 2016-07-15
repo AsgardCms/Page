@@ -10,6 +10,7 @@ use Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider;
 use Modules\Core\Providers\CoreServiceProvider;
 use Modules\Page\Providers\PageServiceProvider;
 use Modules\Page\Repositories\PageRepository;
+use Modules\Tag\Providers\TagServiceProvider;
 use Nwidart\Modules\LaravelModulesServiceProvider;
 use Orchestra\Testbench\TestCase;
 
@@ -34,6 +35,7 @@ abstract class BasePageTest extends TestCase
         return [
             LaravelModulesServiceProvider::class,
             CoreServiceProvider::class,
+            TagServiceProvider::class,
             PageServiceProvider::class,
             LaravelLocalizationServiceProvider::class,
             SidebarServiceProvider::class,
@@ -78,6 +80,10 @@ abstract class BasePageTest extends TestCase
         $artisan->call('migrate', [
             '--database' => 'sqlite',
             '--path'     => $migrationsPath,
+        ]);
+        $artisan->call('migrate', [
+            '--database' => 'sqlite',
+            '--path'     => 'Modules/Tag/Database/Migrations',
         ]);
     }
 }
