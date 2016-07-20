@@ -66,11 +66,13 @@ class EloquentPageRepository extends EloquentBaseRepository implements PageRepos
         return $model;
     }
 
-    public function destroy($model)
+    public function destroy($page)
     {
-        event(new PageWasDeleted($model));
+        $page->untag();
 
-        return $model->delete();
+        event(new PageWasDeleted($page));
+
+        return $page->delete();
     }
 
     /**
