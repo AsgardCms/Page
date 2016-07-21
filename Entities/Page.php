@@ -4,8 +4,8 @@ namespace Modules\Page\Entities;
 
 use Dimsav\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Model;
+use Modules\Core\Traits\NamespacedEntity;
 use Modules\Tag\Contracts\TaggableInterface;
-use Modules\Tag\Traits\NamespacedEntity;
 use Modules\Tag\Traits\TaggableTrait;
 
 class Page extends Model implements TaggableInterface
