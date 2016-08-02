@@ -3,3 +3,4 @@
 vendor/
 Modules/
 composer.lock
+build/

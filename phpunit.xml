@@ -15,4 +15,30 @@
             <directory suffix=".php">./Tests/</directory>
         </testsuite>
     </testsuites>
+    <filter>
+        <whitelist>
+            <directory suffix=".php">.</directory>
+            <exclude>
+                <directory suffix=".php">vendor/</directory>
+                <directory suffix=".php">Modules/</directory>
+                <directory suffix=".php">Repositories/Cache/</directory>
+                <directory suffix=".php">Resources/</directory>
+                <directory suffix=".php">Http/</directory>
+                <directory suffix=".php">Config/</directory>
+                <directory suffix=".php">Sidebar/</directory>
+                <directory suffix=".php">Providers/</directory>
+                <directory suffix=".php">Composers/</directory>
+                <directory suffix=".php">Database/Seeders/</directory>
+                <directory suffix=".php">Tests/</directory>
+                <directory suffix=".php">composers.php</directory>
+            </exclude>
+        </whitelist>
+    </filter>
+    <logging>
+        <log type="tap" target="build/report.tap"/>
+        <log type="junit" target="build/report.junit.xml"/>
+        <log type="coverage-html" target="build/coverage" charset="UTF-8" yui="true" highlight="true"/>
+        <log type="coverage-text" target="build/coverage.txt"/>
+        <log type="coverage-clover" target="build/logs/clover.xml"/>
+    </logging>
 </phpunit>
