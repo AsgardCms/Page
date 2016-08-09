@@ -46,6 +46,10 @@ class SidebarExtender implements \Maatwebsite\Sidebar\SidebarExtender
                     $this->auth->hasAccess('page.pages.index')
                 );
             });
+
+            $group->authorize(
+                $this->auth->hasAccess('page.*')
+            );
         });
 
         return $menu;
