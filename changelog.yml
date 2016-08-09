@@ -1,5 +1,8 @@
 url: https://github.com/AsgardCms/Page
 versions:
+    "1.16.0":
+        changed:
+            - Only list content in sidebar when accessible
     "1.15.1":
         changed:
             - Fixing issue where saving the homepage would remove the is_home status on it
