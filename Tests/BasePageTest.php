@@ -70,7 +70,6 @@ abstract class BasePageTest extends TestCase
         // Makes sure the migrations table is created
         $artisan->call('migrate', [
             '--database' => 'sqlite',
-            '--path'     => $migrationsPath,
         ]);
         // We empty all tables
         $artisan->call('migrate:reset', [
@@ -79,7 +78,6 @@ abstract class BasePageTest extends TestCase
         // Migrate
         $artisan->call('migrate', [
             '--database' => 'sqlite',
-            '--path'     => $migrationsPath,
         ]);
         $artisan->call('migrate', [
             '--database' => 'sqlite',
