@@ -8,6 +8,7 @@ use Modules\Core\Traits\CanPublishConfiguration;
 use Modules\Page\Entities\Page;
 use Modules\Page\Repositories\Cache\CachePageDecorator;
 use Modules\Page\Repositories\Eloquent\EloquentPageRepository;
+use Modules\Page\Services\FinderService;
 use Modules\Tag\Repositories\TagManager;
 
 class PageServiceProvider extends ServiceProvider
@@ -51,6 +52,10 @@ class PageServiceProvider extends ServiceProvider
 
     private function registerBindings()
     {
+        $this->app->bind(FinderService::class, function () {
+            return new FinderService();
+        });
+
         $this->app->bind(
             'Modules\Page\Repositories\PageRepository',
             function () {

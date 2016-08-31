@@ -3,8 +3,8 @@
 namespace Modules\Page\Composers;
 
 use Illuminate\Contracts\View\View;
-use Illuminate\Filesystem\Filesystem;
 use Modules\Core\Foundation\Theme\ThemeManager;
+use Modules\Page\Services\FinderService;
 
 class TemplateViewComposer
 {
@@ -12,12 +12,13 @@ class TemplateViewComposer
      * @var ThemeManager
      */
     private $themeManager;
+
     /**
-     * @var Filesystem
+     * @var FinderService
      */
     private $finder;
 
-    public function __construct(ThemeManager $themeManager, Filesystem $finder)
+    public function __construct(ThemeManager $themeManager, FinderService $finder)
     {
         $this->themeManager = $themeManager;
         $this->finder = $finder;
@@ -34,12 +35,8 @@ class TemplateViewComposer
 
         $templates = [];
 
-        foreach ($this->finder->allFiles($path . '/views') as $template) {
+        foreach ($this->finder->excluding(config('asgard.page.config.template-ignored-directories', []))->allFiles($path . '/views') as $template) {
             $relativePath = $template->getRelativePath();
-
-            if ($this->isLayoutOrPartial($relativePath)) {
-                continue;
-            }
 
             $templateName = $this->getTemplateName($template);
             $file = $this->removeExtensionsFromFilename($template);
@@ -95,18 +92,6 @@ class TemplateViewComposer
         $fileName = $this->removeExtensionsFromFilename($template);
 
         return $this->hasSubdirectory($relativePath) ? $relativePath . '/' . $fileName : $fileName;
-    }
-
-    /**
-     * Check if the given path is a layout or a partial.
-     *
-     * @param string $relativePath
-     *
-     * @return bool
-     */
-    private function isLayoutOrPartial($relativePath)
-    {
-        return preg_match("#(layouts|partials)#i", $relativePath) === 1;
     }
 
     /**
