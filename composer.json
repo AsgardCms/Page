@@ -23,7 +23,7 @@
     "php": ">=5.4",
     "composer/installers": "*",
     "asgardcms/core-module": "*",
-    "astromic/laravel-translatable": "*"
+    "astrotomic/laravel-translatable": "*"
   },
   "require-dev": {
     "phpunit/phpunit": "~4.0",
